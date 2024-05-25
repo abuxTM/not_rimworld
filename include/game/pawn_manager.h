@@ -10,12 +10,14 @@
 typedef struct Pawn Pawn;
 
 struct Pawn {
+  const char* name;
   int id;
   int health;
   int speed;
   Vector2D pos, dir;
   Vector2D scale;
   SDL_Texture* texture;
+  SDL_Texture* text_texture;
   bool is_dead;
   bool is_controled;
 };
@@ -35,6 +37,8 @@ void pawn_manager_destroy(PawnManager* manager);
 void pawn_manager_update(PawnManager* manager);
 /// Function for rendering all pawns sprites
 void pawn_manager_render(PawnManager* manager);
+/// Function for removing a pawn in run-time
+void pawn_manager_remove(PawnManager* manager, int id);
 
 
 /// Constructor

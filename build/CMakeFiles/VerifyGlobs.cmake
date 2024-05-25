@@ -3,19 +3,19 @@
 cmake_policy(SET CMP0009 NEW)
 
 # SOURCES at CMakeLists.txt:16 (file)
-file(GLOB_RECURSE NEW_GLOB LIST_DIRECTORIES false "/home/abux/Projects/c/rimworld/src/*.c")
+file(GLOB_RECURSE NEW_GLOB LIST_DIRECTORIES false "/home/abux/Projects/c/not_rimworld/src/*.c")
 set(OLD_GLOB
-  "/home/abux/Projects/c/rimworld/src/core/init.c"
-  "/home/abux/Projects/c/rimworld/src/core/renderer.c"
-  "/home/abux/Projects/c/rimworld/src/core/window.c"
-  "/home/abux/Projects/c/rimworld/src/game/camera.c"
-  "/home/abux/Projects/c/rimworld/src/game/game.c"
-  "/home/abux/Projects/c/rimworld/src/game/pawn_manager.c"
-  "/home/abux/Projects/c/rimworld/src/game/texture_manager.c"
-  "/home/abux/Projects/c/rimworld/src/game/ui.c"
-  "/home/abux/Projects/c/rimworld/src/game/world.c"
+  "/home/abux/Projects/c/not_rimworld/src/core/init.c"
+  "/home/abux/Projects/c/not_rimworld/src/core/renderer.c"
+  "/home/abux/Projects/c/not_rimworld/src/core/window.c"
+  "/home/abux/Projects/c/not_rimworld/src/game/camera.c"
+  "/home/abux/Projects/c/not_rimworld/src/game/game.c"
+  "/home/abux/Projects/c/not_rimworld/src/game/pawn_manager.c"
+  "/home/abux/Projects/c/not_rimworld/src/game/texture_manager.c"
+  "/home/abux/Projects/c/not_rimworld/src/game/ui.c"
+  "/home/abux/Projects/c/not_rimworld/src/game/world.c"
   )
 if(NOT "${NEW_GLOB}" STREQUAL "${OLD_GLOB}")
   message("-- GLOB mismatch!")
-  file(TOUCH_NOCREATE "/home/abux/Projects/c/rimworld/build/CMakeFiles/cmake.verify_globs")
+  file(TOUCH_NOCREATE "/home/abux/Projects/c/not_rimworld/build/CMakeFiles/cmake.verify_globs")
 endif()

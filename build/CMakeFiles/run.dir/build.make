@@ -53,10 +53,10 @@ RM = /usr/bin/cmake -E rm -f
 EQUALS = =
 
 # The top-level source directory on which CMake was run.
-CMAKE_SOURCE_DIR = /home/abux/Projects/c/rimworld
+CMAKE_SOURCE_DIR = /home/abux/Projects/c/not_rimworld
 
 # The top-level build directory on which CMake was run.
-CMAKE_BINARY_DIR = /home/abux/Projects/c/rimworld/build
+CMAKE_BINARY_DIR = /home/abux/Projects/c/not_rimworld/build
 
 # Utility rule file for run.
 
@@ -67,8 +67,8 @@ include CMakeFiles/run.dir/compiler_depend.make
 include CMakeFiles/run.dir/progress.make
 
 CMakeFiles/run: rimworld
-	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --blue --bold --progress-dir=/home/abux/Projects/c/rimworld/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_1) "Running rimworld"
-	cd /home/abux/Projects/c/rimworld && /home/abux/Projects/c/rimworld/build/rimworld
+	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --blue --bold --progress-dir=/home/abux/Projects/c/not_rimworld/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_1) "Running rimworld"
+	cd /home/abux/Projects/c/not_rimworld && /home/abux/Projects/c/not_rimworld/build/rimworld
 
 run: CMakeFiles/run
 run: CMakeFiles/run.dir/build.make
@@ -83,6 +83,6 @@ CMakeFiles/run.dir/clean:
 .PHONY : CMakeFiles/run.dir/clean
 
 CMakeFiles/run.dir/depend:
-	cd /home/abux/Projects/c/rimworld/build && $(CMAKE_COMMAND) -E cmake_depends "Unix Makefiles" /home/abux/Projects/c/rimworld /home/abux/Projects/c/rimworld /home/abux/Projects/c/rimworld/build /home/abux/Projects/c/rimworld/build /home/abux/Projects/c/rimworld/build/CMakeFiles/run.dir/DependInfo.cmake "--color=$(COLOR)"
+	cd /home/abux/Projects/c/not_rimworld/build && $(CMAKE_COMMAND) -E cmake_depends "Unix Makefiles" /home/abux/Projects/c/not_rimworld /home/abux/Projects/c/not_rimworld /home/abux/Projects/c/not_rimworld/build /home/abux/Projects/c/not_rimworld/build /home/abux/Projects/c/not_rimworld/build/CMakeFiles/run.dir/DependInfo.cmake "--color=$(COLOR)"
 .PHONY : CMakeFiles/run.dir/depend
 

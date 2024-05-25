@@ -1,7 +1,6 @@
 #ifndef GLOBAL_H
 #define GLOBAL_H
 
-#include "game/ui.h"
 #define MAX_KEYS 256
 
 #include "game/camera.h"
@@ -18,7 +17,6 @@ typedef struct {
   int screen_height;
 
   Camera* camera;
-  UIManager* ui_manager;
 
   bool key_state[MAX_KEYS];
   bool should_quit;

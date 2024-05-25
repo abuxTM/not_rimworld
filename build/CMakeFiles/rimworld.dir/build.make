@@ -53,10 +53,10 @@ RM = /usr/bin/cmake -E rm -f
 EQUALS = =
 
 # The top-level source directory on which CMake was run.
-CMAKE_SOURCE_DIR = /home/abux/Projects/c/rimworld
+CMAKE_SOURCE_DIR = /home/abux/Projects/c/not_rimworld
 
 # The top-level build directory on which CMake was run.
-CMAKE_BINARY_DIR = /home/abux/Projects/c/rimworld/build
+CMAKE_BINARY_DIR = /home/abux/Projects/c/not_rimworld/build
 
 # Include any dependencies generated for this target.
 include CMakeFiles/rimworld.dir/depend.make
@@ -70,130 +70,130 @@ include CMakeFiles/rimworld.dir/progress.make
 include CMakeFiles/rimworld.dir/flags.make
 
 CMakeFiles/rimworld.dir/src/core/init.c.o: CMakeFiles/rimworld.dir/flags.make
-CMakeFiles/rimworld.dir/src/core/init.c.o: /home/abux/Projects/c/rimworld/src/core/init.c
+CMakeFiles/rimworld.dir/src/core/init.c.o: /home/abux/Projects/c/not_rimworld/src/core/init.c
 CMakeFiles/rimworld.dir/src/core/init.c.o: CMakeFiles/rimworld.dir/compiler_depend.ts
-	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green --progress-dir=/home/abux/Projects/c/rimworld/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_1) "Building C object CMakeFiles/rimworld.dir/src/core/init.c.o"
-	/sbin/cc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -MD -MT CMakeFiles/rimworld.dir/src/core/init.c.o -MF CMakeFiles/rimworld.dir/src/core/init.c.o.d -o CMakeFiles/rimworld.dir/src/core/init.c.o -c /home/abux/Projects/c/rimworld/src/core/init.c
+	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green --progress-dir=/home/abux/Projects/c/not_rimworld/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_1) "Building C object CMakeFiles/rimworld.dir/src/core/init.c.o"
+	/usr/bin/cc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -MD -MT CMakeFiles/rimworld.dir/src/core/init.c.o -MF CMakeFiles/rimworld.dir/src/core/init.c.o.d -o CMakeFiles/rimworld.dir/src/core/init.c.o -c /home/abux/Projects/c/not_rimworld/src/core/init.c
 
 CMakeFiles/rimworld.dir/src/core/init.c.i: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green "Preprocessing C source to CMakeFiles/rimworld.dir/src/core/init.c.i"
-	/sbin/cc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -E /home/abux/Projects/c/rimworld/src/core/init.c > CMakeFiles/rimworld.dir/src/core/init.c.i
+	/usr/bin/cc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -E /home/abux/Projects/c/not_rimworld/src/core/init.c > CMakeFiles/rimworld.dir/src/core/init.c.i
 
 CMakeFiles/rimworld.dir/src/core/init.c.s: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green "Compiling C source to assembly CMakeFiles/rimworld.dir/src/core/init.c.s"
-	/sbin/cc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -S /home/abux/Projects/c/rimworld/src/core/init.c -o CMakeFiles/rimworld.dir/src/core/init.c.s
+	/usr/bin/cc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -S /home/abux/Projects/c/not_rimworld/src/core/init.c -o CMakeFiles/rimworld.dir/src/core/init.c.s
 
 CMakeFiles/rimworld.dir/src/core/renderer.c.o: CMakeFiles/rimworld.dir/flags.make
-CMakeFiles/rimworld.dir/src/core/renderer.c.o: /home/abux/Projects/c/rimworld/src/core/renderer.c
+CMakeFiles/rimworld.dir/src/core/renderer.c.o: /home/abux/Projects/c/not_rimworld/src/core/renderer.c
 CMakeFiles/rimworld.dir/src/core/renderer.c.o: CMakeFiles/rimworld.dir/compiler_depend.ts
-	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green --progress-dir=/home/abux/Projects/c/rimworld/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_2) "Building C object CMakeFiles/rimworld.dir/src/core/renderer.c.o"
-	/sbin/cc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -MD -MT CMakeFiles/rimworld.dir/src/core/renderer.c.o -MF CMakeFiles/rimworld.dir/src/core/renderer.c.o.d -o CMakeFiles/rimworld.dir/src/core/renderer.c.o -c /home/abux/Projects/c/rimworld/src/core/renderer.c
+	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green --progress-dir=/home/abux/Projects/c/not_rimworld/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_2) "Building C object CMakeFiles/rimworld.dir/src/core/renderer.c.o"
+	/usr/bin/cc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -MD -MT CMakeFiles/rimworld.dir/src/core/renderer.c.o -MF CMakeFiles/rimworld.dir/src/core/renderer.c.o.d -o CMakeFiles/rimworld.dir/src/core/renderer.c.o -c /home/abux/Projects/c/not_rimworld/src/core/renderer.c
 
 CMakeFiles/rimworld.dir/src/core/renderer.c.i: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green "Preprocessing C source to CMakeFiles/rimworld.dir/src/core/renderer.c.i"
-	/sbin/cc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -E /home/abux/Projects/c/rimworld/src/core/renderer.c > CMakeFiles/rimworld.dir/src/core/renderer.c.i
+	/usr/bin/cc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -E /home/abux/Projects/c/not_rimworld/src/core/renderer.c > CMakeFiles/rimworld.dir/src/core/renderer.c.i
 
 CMakeFiles/rimworld.dir/src/core/renderer.c.s: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green "Compiling C source to assembly CMakeFiles/rimworld.dir/src/core/renderer.c.s"
-	/sbin/cc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -S /home/abux/Projects/c/rimworld/src/core/renderer.c -o CMakeFiles/rimworld.dir/src/core/renderer.c.s
+	/usr/bin/cc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -S /home/abux/Projects/c/not_rimworld/src/core/renderer.c -o CMakeFiles/rimworld.dir/src/core/renderer.c.s
 
 CMakeFiles/rimworld.dir/src/core/window.c.o: CMakeFiles/rimworld.dir/flags.make
-CMakeFiles/rimworld.dir/src/core/window.c.o: /home/abux/Projects/c/rimworld/src/core/window.c
+CMakeFiles/rimworld.dir/src/core/window.c.o: /home/abux/Projects/c/not_rimworld/src/core/window.c
 CMakeFiles/rimworld.dir/src/core/window.c.o: CMakeFiles/rimworld.dir/compiler_depend.ts
-	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green --progress-dir=/home/abux/Projects/c/rimworld/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_3) "Building C object CMakeFiles/rimworld.dir/src/core/window.c.o"
-	/sbin/cc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -MD -MT CMakeFiles/rimworld.dir/src/core/window.c.o -MF CMakeFiles/rimworld.dir/src/core/window.c.o.d -o CMakeFiles/rimworld.dir/src/core/window.c.o -c /home/abux/Projects/c/rimworld/src/core/window.c
+	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green --progress-dir=/home/abux/Projects/c/not_rimworld/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_3) "Building C object CMakeFiles/rimworld.dir/src/core/window.c.o"
+	/usr/bin/cc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -MD -MT CMakeFiles/rimworld.dir/src/core/window.c.o -MF CMakeFiles/rimworld.dir/src/core/window.c.o.d -o CMakeFiles/rimworld.dir/src/core/window.c.o -c /home/abux/Projects/c/not_rimworld/src/core/window.c
 
 CMakeFiles/rimworld.dir/src/core/window.c.i: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green "Preprocessing C source to CMakeFiles/rimworld.dir/src/core/window.c.i"
-	/sbin/cc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -E /home/abux/Projects/c/rimworld/src/core/window.c > CMakeFiles/rimworld.dir/src/core/window.c.i
+	/usr/bin/cc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -E /home/abux/Projects/c/not_rimworld/src/core/window.c > CMakeFiles/rimworld.dir/src/core/window.c.i
 
 CMakeFiles/rimworld.dir/src/core/window.c.s: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green "Compiling C source to assembly CMakeFiles/rimworld.dir/src/core/window.c.s"
-	/sbin/cc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -S /home/abux/Projects/c/rimworld/src/core/window.c -o CMakeFiles/rimworld.dir/src/core/window.c.s
+	/usr/bin/cc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -S /home/abux/Projects/c/not_rimworld/src/core/window.c -o CMakeFiles/rimworld.dir/src/core/window.c.s
 
 CMakeFiles/rimworld.dir/src/game/camera.c.o: CMakeFiles/rimworld.dir/flags.make
-CMakeFiles/rimworld.dir/src/game/camera.c.o: /home/abux/Projects/c/rimworld/src/game/camera.c
+CMakeFiles/rimworld.dir/src/game/camera.c.o: /home/abux/Projects/c/not_rimworld/src/game/camera.c
 CMakeFiles/rimworld.dir/src/game/camera.c.o: CMakeFiles/rimworld.dir/compiler_depend.ts
-	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green --progress-dir=/home/abux/Projects/c/rimworld/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_4) "Building C object CMakeFiles/rimworld.dir/src/game/camera.c.o"
-	/sbin/cc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -MD -MT CMakeFiles/rimworld.dir/src/game/camera.c.o -MF CMakeFiles/rimworld.dir/src/game/camera.c.o.d -o CMakeFiles/rimworld.dir/src/game/camera.c.o -c /home/abux/Projects/c/rimworld/src/game/camera.c
+	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green --progress-dir=/home/abux/Projects/c/not_rimworld/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_4) "Building C object CMakeFiles/rimworld.dir/src/game/camera.c.o"
+	/usr/bin/cc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -MD -MT CMakeFiles/rimworld.dir/src/game/camera.c.o -MF CMakeFiles/rimworld.dir/src/game/camera.c.o.d -o CMakeFiles/rimworld.dir/src/game/camera.c.o -c /home/abux/Projects/c/not_rimworld/src/game/camera.c
 
 CMakeFiles/rimworld.dir/src/game/camera.c.i: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green "Preprocessing C source to CMakeFiles/rimworld.dir/src/game/camera.c.i"
-	/sbin/cc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -E /home/abux/Projects/c/rimworld/src/game/camera.c > CMakeFiles/rimworld.dir/src/game/camera.c.i
+	/usr/bin/cc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -E /home/abux/Projects/c/not_rimworld/src/game/camera.c > CMakeFiles/rimworld.dir/src/game/camera.c.i
 
 CMakeFiles/rimworld.dir/src/game/camera.c.s: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green "Compiling C source to assembly CMakeFiles/rimworld.dir/src/game/camera.c.s"
-	/sbin/cc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -S /home/abux/Projects/c/rimworld/src/game/camera.c -o CMakeFiles/rimworld.dir/src/game/camera.c.s
+	/usr/bin/cc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -S /home/abux/Projects/c/not_rimworld/src/game/camera.c -o CMakeFiles/rimworld.dir/src/game/camera.c.s
 
 CMakeFiles/rimworld.dir/src/game/game.c.o: CMakeFiles/rimworld.dir/flags.make
-CMakeFiles/rimworld.dir/src/game/game.c.o: /home/abux/Projects/c/rimworld/src/game/game.c
+CMakeFiles/rimworld.dir/src/game/game.c.o: /home/abux/Projects/c/not_rimworld/src/game/game.c
 CMakeFiles/rimworld.dir/src/game/game.c.o: CMakeFiles/rimworld.dir/compiler_depend.ts
-	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green --progress-dir=/home/abux/Projects/c/rimworld/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_5) "Building C object CMakeFiles/rimworld.dir/src/game/game.c.o"
-	/sbin/cc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -MD -MT CMakeFiles/rimworld.dir/src/game/game.c.o -MF CMakeFiles/rimworld.dir/src/game/game.c.o.d -o CMakeFiles/rimworld.dir/src/game/game.c.o -c /home/abux/Projects/c/rimworld/src/game/game.c
+	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green --progress-dir=/home/abux/Projects/c/not_rimworld/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_5) "Building C object CMakeFiles/rimworld.dir/src/game/game.c.o"
+	/usr/bin/cc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -MD -MT CMakeFiles/rimworld.dir/src/game/game.c.o -MF CMakeFiles/rimworld.dir/src/game/game.c.o.d -o CMakeFiles/rimworld.dir/src/game/game.c.o -c /home/abux/Projects/c/not_rimworld/src/game/game.c
 
 CMakeFiles/rimworld.dir/src/game/game.c.i: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green "Preprocessing C source to CMakeFiles/rimworld.dir/src/game/game.c.i"
-	/sbin/cc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -E /home/abux/Projects/c/rimworld/src/game/game.c > CMakeFiles/rimworld.dir/src/game/game.c.i
+	/usr/bin/cc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -E /home/abux/Projects/c/not_rimworld/src/game/game.c > CMakeFiles/rimworld.dir/src/game/game.c.i
 
 CMakeFiles/rimworld.dir/src/game/game.c.s: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green "Compiling C source to assembly CMakeFiles/rimworld.dir/src/game/game.c.s"
-	/sbin/cc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -S /home/abux/Projects/c/rimworld/src/game/game.c -o CMakeFiles/rimworld.dir/src/game/game.c.s
+	/usr/bin/cc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -S /home/abux/Projects/c/not_rimworld/src/game/game.c -o CMakeFiles/rimworld.dir/src/game/game.c.s
 
 CMakeFiles/rimworld.dir/src/game/pawn_manager.c.o: CMakeFiles/rimworld.dir/flags.make
-CMakeFiles/rimworld.dir/src/game/pawn_manager.c.o: /home/abux/Projects/c/rimworld/src/game/pawn_manager.c
+CMakeFiles/rimworld.dir/src/game/pawn_manager.c.o: /home/abux/Projects/c/not_rimworld/src/game/pawn_manager.c
 CMakeFiles/rimworld.dir/src/game/pawn_manager.c.o: CMakeFiles/rimworld.dir/compiler_depend.ts
-	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green --progress-dir=/home/abux/Projects/c/rimworld/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_6) "Building C object CMakeFiles/rimworld.dir/src/game/pawn_manager.c.o"
-	/sbin/cc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -MD -MT CMakeFiles/rimworld.dir/src/game/pawn_manager.c.o -MF CMakeFiles/rimworld.dir/src/game/pawn_manager.c.o.d -o CMakeFiles/rimworld.dir/src/game/pawn_manager.c.o -c /home/abux/Projects/c/rimworld/src/game/pawn_manager.c
+	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green --progress-dir=/home/abux/Projects/c/not_rimworld/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_6) "Building C object CMakeFiles/rimworld.dir/src/game/pawn_manager.c.o"
+	/usr/bin/cc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -MD -MT CMakeFiles/rimworld.dir/src/game/pawn_manager.c.o -MF CMakeFiles/rimworld.dir/src/game/pawn_manager.c.o.d -o CMakeFiles/rimworld.dir/src/game/pawn_manager.c.o -c /home/abux/Projects/c/not_rimworld/src/game/pawn_manager.c
 
 CMakeFiles/rimworld.dir/src/game/pawn_manager.c.i: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green "Preprocessing C source to CMakeFiles/rimworld.dir/src/game/pawn_manager.c.i"
-	/sbin/cc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -E /home/abux/Projects/c/rimworld/src/game/pawn_manager.c > CMakeFiles/rimworld.dir/src/game/pawn_manager.c.i
+	/usr/bin/cc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -E /home/abux/Projects/c/not_rimworld/src/game/pawn_manager.c > CMakeFiles/rimworld.dir/src/game/pawn_manager.c.i
 
 CMakeFiles/rimworld.dir/src/game/pawn_manager.c.s: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green "Compiling C source to assembly CMakeFiles/rimworld.dir/src/game/pawn_manager.c.s"
-	/sbin/cc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -S /home/abux/Projects/c/rimworld/src/game/pawn_manager.c -o CMakeFiles/rimworld.dir/src/game/pawn_manager.c.s
+	/usr/bin/cc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -S /home/abux/Projects/c/not_rimworld/src/game/pawn_manager.c -o CMakeFiles/rimworld.dir/src/game/pawn_manager.c.s
 
 CMakeFiles/rimworld.dir/src/game/texture_manager.c.o: CMakeFiles/rimworld.dir/flags.make
-CMakeFiles/rimworld.dir/src/game/texture_manager.c.o: /home/abux/Projects/c/rimworld/src/game/texture_manager.c
+CMakeFiles/rimworld.dir/src/game/texture_manager.c.o: /home/abux/Projects/c/not_rimworld/src/game/texture_manager.c
 CMakeFiles/rimworld.dir/src/game/texture_manager.c.o: CMakeFiles/rimworld.dir/compiler_depend.ts
-	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green --progress-dir=/home/abux/Projects/c/rimworld/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_7) "Building C object CMakeFiles/rimworld.dir/src/game/texture_manager.c.o"
-	/sbin/cc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -MD -MT CMakeFiles/rimworld.dir/src/game/texture_manager.c.o -MF CMakeFiles/rimworld.dir/src/game/texture_manager.c.o.d -o CMakeFiles/rimworld.dir/src/game/texture_manager.c.o -c /home/abux/Projects/c/rimworld/src/game/texture_manager.c
+	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green --progress-dir=/home/abux/Projects/c/not_rimworld/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_7) "Building C object CMakeFiles/rimworld.dir/src/game/texture_manager.c.o"
+	/usr/bin/cc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -MD -MT CMakeFiles/rimworld.dir/src/game/texture_manager.c.o -MF CMakeFiles/rimworld.dir/src/game/texture_manager.c.o.d -o CMakeFiles/rimworld.dir/src/game/texture_manager.c.o -c /home/abux/Projects/c/not_rimworld/src/game/texture_manager.c
 
 CMakeFiles/rimworld.dir/src/game/texture_manager.c.i: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green "Preprocessing C source to CMakeFiles/rimworld.dir/src/game/texture_manager.c.i"
-	/sbin/cc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -E /home/abux/Projects/c/rimworld/src/game/texture_manager.c > CMakeFiles/rimworld.dir/src/game/texture_manager.c.i
+	/usr/bin/cc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -E /home/abux/Projects/c/not_rimworld/src/game/texture_manager.c > CMakeFiles/rimworld.dir/src/game/texture_manager.c.i
 
 CMakeFiles/rimworld.dir/src/game/texture_manager.c.s: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green "Compiling C source to assembly CMakeFiles/rimworld.dir/src/game/texture_manager.c.s"
-	/sbin/cc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -S /home/abux/Projects/c/rimworld/src/game/texture_manager.c -o CMakeFiles/rimworld.dir/src/game/texture_manager.c.s
+	/usr/bin/cc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -S /home/abux/Projects/c/not_rimworld/src/game/texture_manager.c -o CMakeFiles/rimworld.dir/src/game/texture_manager.c.s
 
 CMakeFiles/rimworld.dir/src/game/ui.c.o: CMakeFiles/rimworld.dir/flags.make
-CMakeFiles/rimworld.dir/src/game/ui.c.o: /home/abux/Projects/c/rimworld/src/game/ui.c
+CMakeFiles/rimworld.dir/src/game/ui.c.o: /home/abux/Projects/c/not_rimworld/src/game/ui.c
 CMakeFiles/rimworld.dir/src/game/ui.c.o: CMakeFiles/rimworld.dir/compiler_depend.ts
-	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green --progress-dir=/home/abux/Projects/c/rimworld/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_8) "Building C object CMakeFiles/rimworld.dir/src/game/ui.c.o"
-	/sbin/cc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -MD -MT CMakeFiles/rimworld.dir/src/game/ui.c.o -MF CMakeFiles/rimworld.dir/src/game/ui.c.o.d -o CMakeFiles/rimworld.dir/src/game/ui.c.o -c /home/abux/Projects/c/rimworld/src/game/ui.c
+	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green --progress-dir=/home/abux/Projects/c/not_rimworld/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_8) "Building C object CMakeFiles/rimworld.dir/src/game/ui.c.o"
+	/usr/bin/cc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -MD -MT CMakeFiles/rimworld.dir/src/game/ui.c.o -MF CMakeFiles/rimworld.dir/src/game/ui.c.o.d -o CMakeFiles/rimworld.dir/src/game/ui.c.o -c /home/abux/Projects/c/not_rimworld/src/game/ui.c
 
 CMakeFiles/rimworld.dir/src/game/ui.c.i: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green "Preprocessing C source to CMakeFiles/rimworld.dir/src/game/ui.c.i"
-	/sbin/cc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -E /home/abux/Projects/c/rimworld/src/game/ui.c > CMakeFiles/rimworld.dir/src/game/ui.c.i
+	/usr/bin/cc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -E /home/abux/Projects/c/not_rimworld/src/game/ui.c > CMakeFiles/rimworld.dir/src/game/ui.c.i
 
 CMakeFiles/rimworld.dir/src/game/ui.c.s: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green "Compiling C source to assembly CMakeFiles/rimworld.dir/src/game/ui.c.s"
-	/sbin/cc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -S /home/abux/Projects/c/rimworld/src/game/ui.c -o CMakeFiles/rimworld.dir/src/game/ui.c.s
+	/usr/bin/cc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -S /home/abux/Projects/c/not_rimworld/src/game/ui.c -o CMakeFiles/rimworld.dir/src/game/ui.c.s
 
 CMakeFiles/rimworld.dir/src/game/world.c.o: CMakeFiles/rimworld.dir/flags.make
-CMakeFiles/rimworld.dir/src/game/world.c.o: /home/abux/Projects/c/rimworld/src/game/world.c
+CMakeFiles/rimworld.dir/src/game/world.c.o: /home/abux/Projects/c/not_rimworld/src/game/world.c
 CMakeFiles/rimworld.dir/src/game/world.c.o: CMakeFiles/rimworld.dir/compiler_depend.ts
-	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green --progress-dir=/home/abux/Projects/c/rimworld/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_9) "Building C object CMakeFiles/rimworld.dir/src/game/world.c.o"
-	/sbin/cc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -MD -MT CMakeFiles/rimworld.dir/src/game/world.c.o -MF CMakeFiles/rimworld.dir/src/game/world.c.o.d -o CMakeFiles/rimworld.dir/src/game/world.c.o -c /home/abux/Projects/c/rimworld/src/game/world.c
+	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green --progress-dir=/home/abux/Projects/c/not_rimworld/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_9) "Building C object CMakeFiles/rimworld.dir/src/game/world.c.o"
+	/usr/bin/cc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -MD -MT CMakeFiles/rimworld.dir/src/game/world.c.o -MF CMakeFiles/rimworld.dir/src/game/world.c.o.d -o CMakeFiles/rimworld.dir/src/game/world.c.o -c /home/abux/Projects/c/not_rimworld/src/game/world.c
 
 CMakeFiles/rimworld.dir/src/game/world.c.i: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green "Preprocessing C source to CMakeFiles/rimworld.dir/src/game/world.c.i"
-	/sbin/cc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -E /home/abux/Projects/c/rimworld/src/game/world.c > CMakeFiles/rimworld.dir/src/game/world.c.i
+	/usr/bin/cc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -E /home/abux/Projects/c/not_rimworld/src/game/world.c > CMakeFiles/rimworld.dir/src/game/world.c.i
 
 CMakeFiles/rimworld.dir/src/game/world.c.s: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green "Compiling C source to assembly CMakeFiles/rimworld.dir/src/game/world.c.s"
-	/sbin/cc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -S /home/abux/Projects/c/rimworld/src/game/world.c -o CMakeFiles/rimworld.dir/src/game/world.c.s
+	/usr/bin/cc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -S /home/abux/Projects/c/not_rimworld/src/game/world.c -o CMakeFiles/rimworld.dir/src/game/world.c.s
 
 # Object files for target rimworld
 rimworld_OBJECTS = \
@@ -221,7 +221,7 @@ rimworld: CMakeFiles/rimworld.dir/src/game/ui.c.o
 rimworld: CMakeFiles/rimworld.dir/src/game/world.c.o
 rimworld: CMakeFiles/rimworld.dir/build.make
 rimworld: CMakeFiles/rimworld.dir/link.txt
-	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green --bold --progress-dir=/home/abux/Projects/c/rimworld/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_10) "Linking C executable rimworld"
+	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green --bold --progress-dir=/home/abux/Projects/c/not_rimworld/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_10) "Linking C executable rimworld"
 	$(CMAKE_COMMAND) -E cmake_link_script CMakeFiles/rimworld.dir/link.txt --verbose=$(VERBOSE)
 
 # Rule to build all files generated by this target.
@@ -233,6 +233,6 @@ CMakeFiles/rimworld.dir/clean:
 .PHONY : CMakeFiles/rimworld.dir/clean
 
 CMakeFiles/rimworld.dir/depend:
-	cd /home/abux/Projects/c/rimworld/build && $(CMAKE_COMMAND) -E cmake_depends "Unix Makefiles" /home/abux/Projects/c/rimworld /home/abux/Projects/c/rimworld /home/abux/Projects/c/rimworld/build /home/abux/Projects/c/rimworld/build /home/abux/Projects/c/rimworld/build/CMakeFiles/rimworld.dir/DependInfo.cmake "--color=$(COLOR)"
+	cd /home/abux/Projects/c/not_rimworld/build && $(CMAKE_COMMAND) -E cmake_depends "Unix Makefiles" /home/abux/Projects/c/not_rimworld /home/abux/Projects/c/not_rimworld /home/abux/Projects/c/not_rimworld/build /home/abux/Projects/c/not_rimworld/build /home/abux/Projects/c/not_rimworld/build/CMakeFiles/rimworld.dir/DependInfo.cmake "--color=$(COLOR)"
 .PHONY : CMakeFiles/rimworld.dir/depend
 

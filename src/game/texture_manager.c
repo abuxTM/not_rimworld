@@ -18,8 +18,8 @@ SDL_Texture* get_texture(const char* path) {
 }
 
 SDL_Texture* get_font_texture(const char* text, int font_size) {
-  TTF_Font* font = TTF_OpenFont("assets/fonts/Norsebold.otf", font_size);
-  SDL_Surface* surface = TTF_RenderText_Solid(font, text, (SDL_Color){200,200,200});
+  TTF_Font* font = TTF_OpenFont("assets/fonts/arial.ttf", font_size);
+  SDL_Surface* surface = TTF_RenderText_Blended(font, text, (SDL_Color){255,255,255});
   if (surface == NULL) { printf("Unable to create text surface!\n"); return NULL; }
   SDL_Texture* texture = SDL_CreateTextureFromSurface(global.renderer, surface);
   if (texture == NULL) { printf("Unable to create text texture!\n"); return NULL; }

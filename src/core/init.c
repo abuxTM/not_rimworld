@@ -19,6 +19,7 @@ void sdl_init(void) {
     printf("[SDL2] There was an error while initializing. SDL_Error: %s\n", SDL_GetError());
     exit(1);
   }
+  printf("[SDL2] Init\n");
 
   if (!SDL_SetHint(SDL_HINT_RENDER_SCALE_QUALITY, "1")) {
     printf("Warning: Linear texture filtering not enabled!");
@@ -28,11 +29,13 @@ void sdl_init(void) {
     printf("[SDL2] There was an error while initializing. SDL_Error: %s\n", SDL_GetError());
     exit(1);
   }
+  printf("[SDL2_Image] Init\n");
 
   if (TTF_Init() < 0) {
     printf("[SDL2] There was an error while initializing. SDL_Error: %s\n", SDL_GetError());
     exit(1);
   }
+  printf("[SDL2_TTF] Init\n");
 }
 
 int main(int argc, char *argv[]) {
@@ -41,6 +44,8 @@ int main(int argc, char *argv[]) {
   global.screen_height = 600;
   global.should_quit = false;
   global.show_coll = false;
+
+  printf("[Game] Init\n");
 
   // Initialize game and game loop
   game_init();
