@@ -1,0 +1,4 @@
+/home/abux/Projects/c/rimworld/build/CMakeFiles/rimworld.dir
+/home/abux/Projects/c/rimworld/build/CMakeFiles/run.dir
+/home/abux/Projects/c/rimworld/build/CMakeFiles/edit_cache.dir
+/home/abux/Projects/c/rimworld/build/CMakeFiles/rebuild_cache.dir

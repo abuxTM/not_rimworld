@@ -1,0 +1,56 @@
+[
+{
+  "directory": "/home/abux/Projects/c/rimworld/build",
+  "command": "/sbin/cc  -I/home/abux/Projects/c/rimworld/include -g -std=gnu11 -o CMakeFiles/rimworld.dir/src/core/init.c.o -c /home/abux/Projects/c/rimworld/src/core/init.c",
+  "file": "/home/abux/Projects/c/rimworld/src/core/init.c",
+  "output": "CMakeFiles/rimworld.dir/src/core/init.c.o"
+},
+{
+  "directory": "/home/abux/Projects/c/rimworld/build",
+  "command": "/sbin/cc  -I/home/abux/Projects/c/rimworld/include -g -std=gnu11 -o CMakeFiles/rimworld.dir/src/core/renderer.c.o -c /home/abux/Projects/c/rimworld/src/core/renderer.c",
+  "file": "/home/abux/Projects/c/rimworld/src/core/renderer.c",
+  "output": "CMakeFiles/rimworld.dir/src/core/renderer.c.o"
+},
+{
+  "directory": "/home/abux/Projects/c/rimworld/build",
+  "command": "/sbin/cc  -I/home/abux/Projects/c/rimworld/include -g -std=gnu11 -o CMakeFiles/rimworld.dir/src/core/window.c.o -c /home/abux/Projects/c/rimworld/src/core/window.c",
+  "file": "/home/abux/Projects/c/rimworld/src/core/window.c",
+  "output": "CMakeFiles/rimworld.dir/src/core/window.c.o"
+},
+{
+  "directory": "/home/abux/Projects/c/rimworld/build",
+  "command": "/sbin/cc  -I/home/abux/Projects/c/rimworld/include -g -std=gnu11 -o CMakeFiles/rimworld.dir/src/game/camera.c.o -c /home/abux/Projects/c/rimworld/src/game/camera.c",
+  "file": "/home/abux/Projects/c/rimworld/src/game/camera.c",
+  "output": "CMakeFiles/rimworld.dir/src/game/camera.c.o"
+},
+{
+  "directory": "/home/abux/Projects/c/rimworld/build",
+  "command": "/sbin/cc  -I/home/abux/Projects/c/rimworld/include -g -std=gnu11 -o CMakeFiles/rimworld.dir/src/game/game.c.o -c /home/abux/Projects/c/rimworld/src/game/game.c",
+  "file": "/home/abux/Projects/c/rimworld/src/game/game.c",
+  "output": "CMakeFiles/rimworld.dir/src/game/game.c.o"
+},
+{
+  "directory": "/home/abux/Projects/c/rimworld/build",
+  "command": "/sbin/cc  -I/home/abux/Projects/c/rimworld/include -g -std=gnu11 -o CMakeFiles/rimworld.dir/src/game/pawn_manager.c.o -c /home/abux/Projects/c/rimworld/src/game/pawn_manager.c",
+  "file": "/home/abux/Projects/c/rimworld/src/game/pawn_manager.c",
+  "output": "CMakeFiles/rimworld.dir/src/game/pawn_manager.c.o"
+},
+{
+  "directory": "/home/abux/Projects/c/rimworld/build",
+  "command": "/sbin/cc  -I/home/abux/Projects/c/rimworld/include -g -std=gnu11 -o CMakeFiles/rimworld.dir/src/game/texture_manager.c.o -c /home/abux/Projects/c/rimworld/src/game/texture_manager.c",
+  "file": "/home/abux/Projects/c/rimworld/src/game/texture_manager.c",
+  "output": "CMakeFiles/rimworld.dir/src/game/texture_manager.c.o"
+},
+{
+  "directory": "/home/abux/Projects/c/rimworld/build",
+  "command": "/sbin/cc  -I/home/abux/Projects/c/rimworld/include -g -std=gnu11 -o CMakeFiles/rimworld.dir/src/game/ui.c.o -c /home/abux/Projects/c/rimworld/src/game/ui.c",
+  "file": "/home/abux/Projects/c/rimworld/src/game/ui.c",
+  "output": "CMakeFiles/rimworld.dir/src/game/ui.c.o"
+},
+{
+  "directory": "/home/abux/Projects/c/rimworld/build",
+  "command": "/sbin/cc  -I/home/abux/Projects/c/rimworld/include -g -std=gnu11 -o CMakeFiles/rimworld.dir/src/game/world.c.o -c /home/abux/Projects/c/rimworld/src/game/world.c",
+  "file": "/home/abux/Projects/c/rimworld/src/game/world.c",
+  "output": "CMakeFiles/rimworld.dir/src/game/world.c.o"
+}
+]
