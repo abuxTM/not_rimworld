@@ -3,6 +3,19 @@ cmake_minimum_required(VERSION 3.0)
 # Project Name
 project(rimworld)
 
+# Enable debug symbols
+set(CMAKE_C_FLAGS_DEBUG "-g")
+set(CMAKE_BUILD_TYPE Debug)
+set(CMAKE_C_FLAGS_DEBUG "${CMAKE_C_FLAGS_DEBUG} -O0")
+
+# Enable AddressSanitizer
+set(CMAKE_C_FLAGS "${CMAKE_C_FLAGS} -fsanitize=address -g")
+set(CMAKE_CXX_FLAGS "${CMAKE_CXX_FLAGS} -fsanitize=address -g")
+
+# Optional: Add more sanitizer flags if necessary
+set(CMAKE_C_FLAGS "${CMAKE_C_FLAGS} -fsanitize=address,undefined -g")
+set(CMAKE_CXX_FLAGS "${CMAKE_CXX_FLAGS} -fsanitize=address,undefined -g")
+
 # Set commands
 set(CMAKE_C_STANDARD 11)
 set(CMAKE_C_STANDARD_REQUIRED True)

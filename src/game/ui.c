@@ -1,4 +1,4 @@
-#include "game/ui.h"
+#include "game/ui/ui.h"
 #include "core/global.h"
 #include "game/pawn_manager.h"
 #include "game/texture_manager.h"
@@ -13,7 +13,8 @@ Button* button_create(const char* text, Vector2D pos, Vector2D scale, void (*on_
 
   button->pos = pos;
   button->scale = scale;
-  button->text_texture = get_font_texture(text, 60);
+  button->texture = get_texture("assets/world/grass_tile.png");
+  button->text_texture = get_font_texture(text, 30);
   button->is_active =  true;
   button->is_hovered = false;
   button->is_clicked = false;
@@ -23,27 +24,29 @@ Button* button_create(const char* text, Vector2D pos, Vector2D scale, void (*on_
 }
 
 void button_destroy(Button* button) {
-  SDL_DestroyTexture(button->text_texture);
+  if (button->texture) SDL_DestroyTexture(button->texture);
+  if (button->text_texture->texture) SDL_DestroyTexture(button->text_texture->texture);
+  free(button->text_texture);
   free(button);
 }
 
 void button_handle_event(Button* button, SDL_Event* event) {
-  if (button->is_active) {
-    if (event->type == SDL_MOUSEMOTION) {
-      int mx = event->motion.x;
-      int my = event->motion.y;
-      button->is_hovered = (mx >= button->pos.x && mx <= button->pos.x + button->scale.x &&
-          my >= button->pos.y && my <= button->pos.y + button->scale.y);
-    } else if (event->type == SDL_MOUSEBUTTONDOWN && event->button.button == SDL_BUTTON_LEFT) {
-      if (button->is_hovered) {
-        button->is_clicked = true;
-        if (button->on_click) {
-          button->on_click();
-        }
+  if (!button->is_active) return;
+  if (event->type == SDL_MOUSEMOTION) {
+    // Check if button is hovered or not
+    button->is_hovered = (
+      global.mouse->pos.x >= button->pos.x && global.mouse->pos.x <= button->pos.x + button->scale.x &&
+      global.mouse->pos.y >= button->pos.y && global.mouse->pos.y <= button->pos.y + button->scale.y
+    );
+  } else if (event->type == SDL_MOUSEBUTTONDOWN && event->button.button == SDL_BUTTON_LEFT) {
+    if (button->is_hovered) {
+      button->is_clicked = true;
+      if (button->on_click) {
+        button->on_click();
       }
-    } else if (event->type == SDL_MOUSEBUTTONUP && event->button.button == SDL_BUTTON_LEFT) {
-      button->is_clicked = false;
     }
+  } else if (event->type == SDL_MOUSEBUTTONUP && event->button.button == SDL_BUTTON_LEFT) {
+    button->is_clicked = false;
   }
 }
 
@@ -51,35 +54,36 @@ void button_render(Button* button) {
   float border = 12.f;
   float text_padding = 12.f;
   SDL_Rect rect = { button->pos.x, button->pos.y, button->scale.x, button->scale.y };
-  SDL_Rect border_rect = { button->pos.x - border/2.f, button->pos.y - border/2.f, button->scale.x + border, button->scale.y + border };
-  SDL_Rect text_rect = { button->pos.x + text_padding/2.f, button->pos.y + text_padding/2.f, button->scale.x - text_padding, button->scale.y - text_padding };
+  SDL_Rect text_rect = {
+    (button->pos.x + (button->scale.x - button->text_texture->width)/2) + text_padding/2.f,
+    (button->pos.y - (button->scale.y - button->text_texture->height)/2) + text_padding/2.f,
+    button->text_texture->width, button->text_texture->height
+  };
 
   if (button->is_active) {
-    SDL_SetRenderDrawColor(global.renderer, 0, 0, 0, 255);  // Black border
-    SDL_RenderFillRect(global.renderer, &border_rect);
+    SDL_SetRenderDrawColor(global.renderer, 0, 0, 0, 100);  // Black border
     if (button->is_hovered) {
-      SDL_SetRenderDrawColor(global.renderer, 200, 200, 200, 255);  // Light gray when hovered
+      SDL_SetRenderDrawColor(global.renderer, 40, 21, 11, 255);  // Light gray when hovered
     } else {
-      SDL_SetRenderDrawColor(global.renderer, 100, 100, 100, 255);  // Dark gray otherwise
+      SDL_SetRenderDrawColor(global.renderer, 133, 97, 67, 255);  // Dark gray otherwise
     }
     SDL_RenderFillRect(global.renderer, &rect);
+    SDL_RenderCopy(global.renderer, button->texture, NULL, &rect);
 
-    SDL_RenderCopy(global.renderer, button->text_texture, NULL, &text_rect);
+    SDL_RenderCopy(global.renderer, button->text_texture->texture, NULL, &text_rect);
   }
 }
 
-void button_set_text(Button* button, const char* text) {
-  button->text = text;
-  button->text_texture = get_font_texture(text, 80);
-}
+void button_set_text(Button* button, const char* text) {}
 
-Panel* panel_create(Vector2D pos, Vector2D scale) {
+Panel* panel_create(Vector2D pos, Vector2D scale, SDL_Texture* texture) {
   Panel* panel = malloc(sizeof(Panel));
+  if (!panel) return NULL;
 
   panel->pos = pos;
   panel->scale = scale;
-  panel->texture = NULL;
-  panel->is_active = false;
+  panel->texture = texture;
+  panel->is_active = true;
   
   return panel;
 }
@@ -90,9 +94,99 @@ void panel_destroy(Panel* panel) {
 }
 
 void panel_render(Panel* panel) {
+  if (!panel->is_active) return;
   SDL_Rect rect = { panel->pos.x, panel->pos.y, panel->scale.x, panel->scale.y };
 
-  if (panel->is_active) SDL_RenderFillRect(global.renderer, &rect);
+  SDL_SetRenderDrawColor(global.renderer, 0, 0, 0, 255);
+  (panel->texture)
+    ? SDL_RenderCopy(global.renderer, panel->texture, NULL, &rect)
+    : SDL_RenderFillRect(global.renderer, &rect);
+}
+
+Tab* tab_create(Vector2D pos, Vector2D scale, size_t initial_capacity) {
+  Tab* tab = malloc(sizeof(Tab));
+  if (!tab) return NULL;
+
+  tab->pos = pos;
+  tab->scale = scale;
+  tab->buttons = malloc(initial_capacity * sizeof(Button*));
+  tab->panels = malloc(initial_capacity * sizeof(Panel*));
+  tab->button_count = 0;
+  tab->panel_count = 0;
+  tab->capacity = initial_capacity;
+  tab->is_active = true;
+
+  return tab;
+}
+
+void tab_destroy(Tab* tab) {
+  for (size_t i = 0; i < tab->button_count; ++i) {
+    if (tab->buttons[i]) button_destroy(tab->buttons[i]);
+  }
+  for (size_t i = 0; i < tab->panel_count; ++i) {
+    if (tab->panels[i]) panel_destroy(tab->panels[i]);
+  }
+  free(tab->buttons);
+  free(tab->panels);
+}
+
+void tab_render(Tab* tab) {
+  if (!tab->is_active) return;
+  for (size_t i = 0; i < tab->panel_count; ++i) {
+    panel_render(tab->panels[i]);
+  }
+  for (size_t i = 0; i < tab->button_count; ++i) {
+    button_render(tab->buttons[i]);
+  }
+}
+
+void tab_add_button_lined(Tab* tab, const char* text, void (*on_click)(void), bool is_active) {
+  if (tab->button_count >= tab->capacity) {
+    tab->capacity *= 2;
+    tab->buttons = realloc(tab->buttons, tab->capacity * sizeof(Button*));
+  }
+
+  // Calculate the position and scale for the new button
+  float button_width = tab->scale.x / (tab->button_count + 1);
+  float button_height = tab->scale.y;
+  Vector2D pos = { tab->pos.x, tab->pos.y };
+  Vector2D scale = { button_width, button_height };
+
+  // Create the new button
+  Button* button = button_create(text, pos, scale, on_click);
+  button->is_active = is_active;
+
+  // Adjust the position and scale of all existing buttons
+  for (int i = 0; i < tab->button_count; i++) {
+    tab->buttons[i]->scale.x = button_width;
+    tab->buttons[i]->pos.x = tab->pos.x + i * button_width;
+  }
+
+  // Set the position of the new button
+  button->pos.x = tab->pos.x + tab->button_count * button_width;
+
+  // Add the new button to the tab
+  tab->buttons[tab->button_count++] = button;
+}
+
+void tab_add_button(Tab* tab, const char* text, Vector2D pos, Vector2D scale, void (*on_click)(void), bool is_active) {
+  if (tab->button_count >= tab->capacity) {
+    tab->capacity *= 2;
+    tab->buttons = realloc(tab->buttons, tab->capacity * sizeof(Button*));
+  }
+  Button* button = button_create(text, pos, scale, on_click);
+  button->is_active = is_active;
+  tab->buttons[tab->panel_count++] = button;
+}
+
+void tab_add_panel(Tab* tab, SDL_Texture* texture, bool is_active) {
+  if (tab->panel_count >= tab->capacity) {
+    tab->capacity *= 2;
+    tab->panels = realloc(tab->panels, tab->capacity * sizeof(Panel*));
+  }
+  Panel* panel = panel_create(tab->pos, tab->scale, texture);
+  panel->is_active = is_active;
+  tab->panels[tab->panel_count++] = panel;
 }
 
 PawnUI* pawn_ui_create(Vector2D pos, Vector2D scale) {
@@ -102,13 +196,13 @@ PawnUI* pawn_ui_create(Vector2D pos, Vector2D scale) {
   pawn_ui->scale = scale;
   pawn_ui->is_active = false;
 
-  pawn_ui->pawn_health = button_create("", pos, scale, NULL);
+  pawn_ui->pawn_health = button_create(" ", pos, scale, NULL);
   pawn_ui->pawn_health->is_active = pawn_ui->is_active;
 
-  pawn_ui->pawn_speed = button_create("", (Vector2D){pos.x+106, pos.y}, scale, NULL);
+  pawn_ui->pawn_speed = button_create(" ", (Vector2D){pos.x+106, pos.y}, scale, NULL);
   pawn_ui->pawn_health->is_active = pawn_ui->is_active;
 
-  pawn_ui->panel = panel_create(pos, (Vector2D){scale.x*2, scale.y*2});
+  pawn_ui->panel = panel_create(pos, (Vector2D){scale.x*2, scale.y*2}, NULL);
   pawn_ui->panel->is_active = pawn_ui->is_active;
 
   return pawn_ui;

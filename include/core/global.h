@@ -1,6 +1,9 @@
 #ifndef GLOBAL_H
 #define GLOBAL_H
 
+#include "game/mouse.h"
+#include "game/pawn_manager.h"
+#define TILE_SIZE 64
 #define MAX_KEYS 256
 
 #include "game/camera.h"
@@ -16,7 +19,9 @@ typedef struct {
   int screen_width;
   int screen_height;
 
+  Mouse* mouse;
   Camera* camera;
+  PawnManager* pawn_manager;
 
   bool key_state[MAX_KEYS];
   bool should_quit;

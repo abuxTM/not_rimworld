@@ -21,7 +21,7 @@ void sdl_init(void) {
   }
   printf("[SDL2] Init\n");
 
-  if (!SDL_SetHint(SDL_HINT_RENDER_SCALE_QUALITY, "1")) {
+  if (!SDL_SetHint(SDL_HINT_RENDER_SCALE_QUALITY, "2")) {
     printf("Warning: Linear texture filtering not enabled!");
   }
 

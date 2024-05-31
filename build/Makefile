@@ -57,10 +57,10 @@ RM = /usr/bin/cmake -E rm -f
 EQUALS = =
 
 # The top-level source directory on which CMake was run.
-CMAKE_SOURCE_DIR = /home/abux/Projects/c/not_rimworld
+CMAKE_SOURCE_DIR = /home/abux/Projects/c/rimworld
 
 # The top-level build directory on which CMake was run.
-CMAKE_BINARY_DIR = /home/abux/Projects/c/not_rimworld/build
+CMAKE_BINARY_DIR = /home/abux/Projects/c/rimworld/build
 
 #=============================================================================
 # Targets provided globally by CMake.
@@ -87,9 +87,9 @@ rebuild_cache/fast: rebuild_cache
 
 # The main all target
 all: cmake_check_build_system
-	$(CMAKE_COMMAND) -E cmake_progress_start /home/abux/Projects/c/not_rimworld/build/CMakeFiles /home/abux/Projects/c/not_rimworld/build//CMakeFiles/progress.marks
+	$(CMAKE_COMMAND) -E cmake_progress_start /home/abux/Projects/c/rimworld/build/CMakeFiles /home/abux/Projects/c/rimworld/build//CMakeFiles/progress.marks
 	$(MAKE) $(MAKESILENT) -f CMakeFiles/Makefile2 all
-	$(CMAKE_COMMAND) -E cmake_progress_start /home/abux/Projects/c/not_rimworld/build/CMakeFiles 0
+	$(CMAKE_COMMAND) -E cmake_progress_start /home/abux/Projects/c/rimworld/build/CMakeFiles 0
 .PHONY : all
 
 # The main clean target
@@ -113,7 +113,7 @@ preinstall/fast:
 
 # clear depends
 depend:
-	$(CMAKE_COMMAND) -P /home/abux/Projects/c/not_rimworld/build/CMakeFiles/VerifyGlobs.cmake
+	$(CMAKE_COMMAND) -P /home/abux/Projects/c/rimworld/build/CMakeFiles/VerifyGlobs.cmake
 	$(CMAKE_COMMAND) -S$(CMAKE_SOURCE_DIR) -B$(CMAKE_BINARY_DIR) --check-build-system CMakeFiles/Makefile.cmake 1
 .PHONY : depend
 
@@ -263,6 +263,78 @@ src/game/game.c.s:
 	$(MAKE) $(MAKESILENT) -f CMakeFiles/rimworld.dir/build.make CMakeFiles/rimworld.dir/src/game/game.c.s
 .PHONY : src/game/game.c.s
 
+src/game/item_manager/inventory.o: src/game/item_manager/inventory.c.o
+.PHONY : src/game/item_manager/inventory.o
+
+# target to build an object file
+src/game/item_manager/inventory.c.o:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/rimworld.dir/build.make CMakeFiles/rimworld.dir/src/game/item_manager/inventory.c.o
+.PHONY : src/game/item_manager/inventory.c.o
+
+src/game/item_manager/inventory.i: src/game/item_manager/inventory.c.i
+.PHONY : src/game/item_manager/inventory.i
+
+# target to preprocess a source file
+src/game/item_manager/inventory.c.i:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/rimworld.dir/build.make CMakeFiles/rimworld.dir/src/game/item_manager/inventory.c.i
+.PHONY : src/game/item_manager/inventory.c.i
+
+src/game/item_manager/inventory.s: src/game/item_manager/inventory.c.s
+.PHONY : src/game/item_manager/inventory.s
+
+# target to generate assembly for a file
+src/game/item_manager/inventory.c.s:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/rimworld.dir/build.make CMakeFiles/rimworld.dir/src/game/item_manager/inventory.c.s
+.PHONY : src/game/item_manager/inventory.c.s
+
+src/game/item_manager/item.o: src/game/item_manager/item.c.o
+.PHONY : src/game/item_manager/item.o
+
+# target to build an object file
+src/game/item_manager/item.c.o:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/rimworld.dir/build.make CMakeFiles/rimworld.dir/src/game/item_manager/item.c.o
+.PHONY : src/game/item_manager/item.c.o
+
+src/game/item_manager/item.i: src/game/item_manager/item.c.i
+.PHONY : src/game/item_manager/item.i
+
+# target to preprocess a source file
+src/game/item_manager/item.c.i:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/rimworld.dir/build.make CMakeFiles/rimworld.dir/src/game/item_manager/item.c.i
+.PHONY : src/game/item_manager/item.c.i
+
+src/game/item_manager/item.s: src/game/item_manager/item.c.s
+.PHONY : src/game/item_manager/item.s
+
+# target to generate assembly for a file
+src/game/item_manager/item.c.s:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/rimworld.dir/build.make CMakeFiles/rimworld.dir/src/game/item_manager/item.c.s
+.PHONY : src/game/item_manager/item.c.s
+
+src/game/mouse.o: src/game/mouse.c.o
+.PHONY : src/game/mouse.o
+
+# target to build an object file
+src/game/mouse.c.o:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/rimworld.dir/build.make CMakeFiles/rimworld.dir/src/game/mouse.c.o
+.PHONY : src/game/mouse.c.o
+
+src/game/mouse.i: src/game/mouse.c.i
+.PHONY : src/game/mouse.i
+
+# target to preprocess a source file
+src/game/mouse.c.i:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/rimworld.dir/build.make CMakeFiles/rimworld.dir/src/game/mouse.c.i
+.PHONY : src/game/mouse.c.i
+
+src/game/mouse.s: src/game/mouse.c.s
+.PHONY : src/game/mouse.s
+
+# target to generate assembly for a file
+src/game/mouse.c.s:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/rimworld.dir/build.make CMakeFiles/rimworld.dir/src/game/mouse.c.s
+.PHONY : src/game/mouse.c.s
+
 src/game/pawn_manager.o: src/game/pawn_manager.c.o
 .PHONY : src/game/pawn_manager.o
 
@@ -384,6 +456,15 @@ help:
 	@echo "... src/game/game.o"
 	@echo "... src/game/game.i"
 	@echo "... src/game/game.s"
+	@echo "... src/game/item_manager/inventory.o"
+	@echo "... src/game/item_manager/inventory.i"
+	@echo "... src/game/item_manager/inventory.s"
+	@echo "... src/game/item_manager/item.o"
+	@echo "... src/game/item_manager/item.i"
+	@echo "... src/game/item_manager/item.s"
+	@echo "... src/game/mouse.o"
+	@echo "... src/game/mouse.i"
+	@echo "... src/game/mouse.s"
 	@echo "... src/game/pawn_manager.o"
 	@echo "... src/game/pawn_manager.i"
 	@echo "... src/game/pawn_manager.s"
@@ -407,7 +488,7 @@ help:
 # No rule that depends on this can have commands that come from listfiles
 # because they might be regenerated.
 cmake_check_build_system:
-	$(CMAKE_COMMAND) -P /home/abux/Projects/c/not_rimworld/build/CMakeFiles/VerifyGlobs.cmake
+	$(CMAKE_COMMAND) -P /home/abux/Projects/c/rimworld/build/CMakeFiles/VerifyGlobs.cmake
 	$(CMAKE_COMMAND) -S$(CMAKE_SOURCE_DIR) -B$(CMAKE_BINARY_DIR) --check-build-system CMakeFiles/Makefile.cmake 0
 .PHONY : cmake_check_build_system
 

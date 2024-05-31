@@ -4,8 +4,9 @@
 #include "core/renderer.h"
 #include "core/window.h"
 #include "game/camera.h"
+#include "game/mouse.h"
 #include "game/pawn_manager.h"
-#include "game/ui.h"
+#include "game/ui/ui.h"
 #include "game/world.h"
 #include "utils/remath.h"
 #include <SDL2/SDL.h>
@@ -22,57 +23,52 @@
 #include <stdlib.h>
 #include <string.h>
 #include <sys/types.h>
+#include <time.h>
 
 Camera* camera = NULL;
 World* world = NULL;
-PawnManager* pawn_manager = NULL;
 
-Button* building_btn = NULL;
-Button* work_btn = NULL;
-Button* world_btn = NULL;
-
+Tab* footer = NULL;
 PawnUI* pawn_ui = NULL;
-
-void button_one() {
-  global.camera->follow_target = !global.camera->follow_target;
-  pawn_manager->pawns[0]->is_controled = !pawn_manager->pawns[0]->is_controled;
-  pawn_ui_toggle(pawn_ui, pawn_manager->pawns[0]);
-}
-
-void button_two() {
-  global.camera->follow_target = !global.camera->follow_target;
-  pawn_manager->pawns[1]->is_controled = !pawn_manager->pawns[1]->is_controled;
-}
 
 void game_init(void) {
   // Default init
   sdl_init();
   window_init();
   renderer_init();
+  srand(time(NULL));
 
   SDL_RenderSetLogicalSize(global.renderer, global.screen_width, global.screen_height);
   SDL_RenderSetIntegerScale(global.renderer, SDL_TRUE);
 
   // Global init
-  global.font = TTF_OpenFont("assets/fonts/Norse.otf", 24);
+  global.mouse = mouse_init();
   global.camera = camera_create();
   global.camera->follow_target = false;
   world = world_create(100);
-  pawn_manager = pawn_manager_create(10);
+  global.pawn_manager = pawn_manager_create(10);
   memset(global.key_state, 0, sizeof(global.key_state));
 
   // Tests init
-  building_btn = button_create("Building", (Vector2D){6, global.screen_height-46}, (Vector2D){100, 40}, button_one);
-  work_btn = button_create("Work", (Vector2D){112, global.screen_height-46}, (Vector2D){100, 40}, button_two);
-  world_btn = button_create("World", (Vector2D){218, global.screen_height-46}, (Vector2D){100, 40}, button_two);
-  pawn_create(pawn_manager, (Vector2D){0, 0}, (Vector2D){64, 64});
-  pawn_create(pawn_manager, (Vector2D){35, 0}, (Vector2D){64, 64});
+  pawn_create((Vector2D){64, 0}, (Vector2D){64, 64});
+  pawn_create((Vector2D){0, 0}, (Vector2D){64, 64});
 
+  footer = tab_create(
+    (Vector2D){0, global.screen_height-30},
+    (Vector2D){global.screen_width, 30},
+    10
+  );
+  tab_add_button_lined(footer, "BUILDING", NULL, true);
+  tab_add_button_lined(footer, "WORLD", NULL, true);
+  tab_add_button_lined(footer, "YES", NULL, false);
+  tab_add_button_lined(footer, "WORLD", NULL, true);
+  tab_add_button_lined(footer, "PAWNS", NULL, true);
+  tab_add_panel(footer, NULL, true);
   pawn_ui = pawn_ui_create((Vector2D){6, 6}, (Vector2D){100, 40});
 
   for (float y = 0; y < 20; ++y) {
     for (float x = 0; x < 20; ++x) {
-      block_create(world, (Vector2D){x*66, y*68}, (Vector2D){62, 64});
+      block_create(world, (Vector2D){x*62, y*62}, (Vector2D){TILE_SIZE, TILE_SIZE});
     }
   }
 
@@ -80,13 +76,12 @@ void game_init(void) {
 }
 
 void game_cleanup(void) {
+  free(global.mouse);
   free(global.camera);
-  button_destroy(building_btn);
-  button_destroy(work_btn);
-  button_destroy(world_btn);
+  tab_destroy(footer);
   pawn_ui_destroy(pawn_ui);
   world_destroy(world);
-  pawn_manager_destroy(pawn_manager);
+  pawn_manager_destroy(global.pawn_manager);
   SDL_DestroyRenderer(global.renderer);
   SDL_DestroyWindow(global.window);
   TTF_Quit();
@@ -96,7 +91,7 @@ void game_cleanup(void) {
 
 void game_update(void) {
   camera_update(global.camera);
-  pawn_manager_update(pawn_manager);
+  pawn_manager_update(global.pawn_manager);
 }
 
 void game_render(void) {
@@ -104,11 +99,10 @@ void game_render(void) {
   SDL_RenderClear(global.renderer);
 
   world_render(world);
-  pawn_manager_render(pawn_manager);
-  button_render(building_btn);
-  button_render(work_btn);
-  button_render(world_btn);
+  pawn_manager_render(global.pawn_manager);
   pawn_ui_render(pawn_ui);
+  mouse_render(world);
+  tab_render(footer);
 
   SDL_RenderPresent(global.renderer);
 }
@@ -127,10 +121,13 @@ void game_loop(void) {
       if (event.type == SDL_QUIT) global.should_quit = true;
       if (event.type == SDL_KEYDOWN) global.key_state[event.key.keysym.sym % MAX_KEYS] = true;
       if (event.type == SDL_KEYUP) global.key_state[event.key.keysym.sym % MAX_KEYS] = false;
-    button_handle_event(building_btn, &event);
+      pawn_manager_inputs(&event);
+      mouse_inputs(&event);
     }
 
     if (global.key_state[SDLK_LCTRL % MAX_KEYS] && global.key_state[SDLK_c % MAX_KEYS]) global.should_quit = true;
+    if (global.key_state[SDLK_r % MAX_KEYS]) global.camera->zoom += .02;
+    if (global.key_state[SDLK_f % MAX_KEYS]) global.camera->zoom -= .02;
 
     game_update();
     game_render();

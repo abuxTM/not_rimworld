@@ -3,7 +3,12 @@
 
 #include <SDL2/SDL_render.h>
 
+typedef struct {
+  SDL_Texture* texture;
+  float width, height;
+} FontTexture;
+
 SDL_Texture* get_texture(const char* path);
-SDL_Texture* get_font_texture(const char* text, int font_size);
+FontTexture* get_font_texture(const char* text, int font_size);
 
 #endif

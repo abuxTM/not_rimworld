@@ -8,6 +8,7 @@
 typedef struct {
   Vector2D pos, dir, scale;
   float speed;
+  float zoom;
   bool follow_target;
 } Camera;
 

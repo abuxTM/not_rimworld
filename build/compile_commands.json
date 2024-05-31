@@ -1,56 +1,74 @@
 [
 {
-  "directory": "/home/abux/Projects/c/not_rimworld/build",
-  "command": "/usr/bin/cc  -I/home/abux/Projects/c/not_rimworld/include -g -std=gnu11 -o CMakeFiles/rimworld.dir/src/core/init.c.o -c /home/abux/Projects/c/not_rimworld/src/core/init.c",
-  "file": "/home/abux/Projects/c/not_rimworld/src/core/init.c",
+  "directory": "/home/abux/Projects/c/rimworld/build",
+  "command": "/sbin/cc  -I/home/abux/Projects/c/rimworld/include  -fsanitize=address -g -fsanitize=address,undefined -g -g -O0 -std=gnu11 -o CMakeFiles/rimworld.dir/src/core/init.c.o -c /home/abux/Projects/c/rimworld/src/core/init.c",
+  "file": "/home/abux/Projects/c/rimworld/src/core/init.c",
   "output": "CMakeFiles/rimworld.dir/src/core/init.c.o"
 },
 {
-  "directory": "/home/abux/Projects/c/not_rimworld/build",
-  "command": "/usr/bin/cc  -I/home/abux/Projects/c/not_rimworld/include -g -std=gnu11 -o CMakeFiles/rimworld.dir/src/core/renderer.c.o -c /home/abux/Projects/c/not_rimworld/src/core/renderer.c",
-  "file": "/home/abux/Projects/c/not_rimworld/src/core/renderer.c",
+  "directory": "/home/abux/Projects/c/rimworld/build",
+  "command": "/sbin/cc  -I/home/abux/Projects/c/rimworld/include  -fsanitize=address -g -fsanitize=address,undefined -g -g -O0 -std=gnu11 -o CMakeFiles/rimworld.dir/src/core/renderer.c.o -c /home/abux/Projects/c/rimworld/src/core/renderer.c",
+  "file": "/home/abux/Projects/c/rimworld/src/core/renderer.c",
   "output": "CMakeFiles/rimworld.dir/src/core/renderer.c.o"
 },
 {
-  "directory": "/home/abux/Projects/c/not_rimworld/build",
-  "command": "/usr/bin/cc  -I/home/abux/Projects/c/not_rimworld/include -g -std=gnu11 -o CMakeFiles/rimworld.dir/src/core/window.c.o -c /home/abux/Projects/c/not_rimworld/src/core/window.c",
-  "file": "/home/abux/Projects/c/not_rimworld/src/core/window.c",
+  "directory": "/home/abux/Projects/c/rimworld/build",
+  "command": "/sbin/cc  -I/home/abux/Projects/c/rimworld/include  -fsanitize=address -g -fsanitize=address,undefined -g -g -O0 -std=gnu11 -o CMakeFiles/rimworld.dir/src/core/window.c.o -c /home/abux/Projects/c/rimworld/src/core/window.c",
+  "file": "/home/abux/Projects/c/rimworld/src/core/window.c",
   "output": "CMakeFiles/rimworld.dir/src/core/window.c.o"
 },
 {
-  "directory": "/home/abux/Projects/c/not_rimworld/build",
-  "command": "/usr/bin/cc  -I/home/abux/Projects/c/not_rimworld/include -g -std=gnu11 -o CMakeFiles/rimworld.dir/src/game/camera.c.o -c /home/abux/Projects/c/not_rimworld/src/game/camera.c",
-  "file": "/home/abux/Projects/c/not_rimworld/src/game/camera.c",
+  "directory": "/home/abux/Projects/c/rimworld/build",
+  "command": "/sbin/cc  -I/home/abux/Projects/c/rimworld/include  -fsanitize=address -g -fsanitize=address,undefined -g -g -O0 -std=gnu11 -o CMakeFiles/rimworld.dir/src/game/camera.c.o -c /home/abux/Projects/c/rimworld/src/game/camera.c",
+  "file": "/home/abux/Projects/c/rimworld/src/game/camera.c",
   "output": "CMakeFiles/rimworld.dir/src/game/camera.c.o"
 },
 {
-  "directory": "/home/abux/Projects/c/not_rimworld/build",
-  "command": "/usr/bin/cc  -I/home/abux/Projects/c/not_rimworld/include -g -std=gnu11 -o CMakeFiles/rimworld.dir/src/game/game.c.o -c /home/abux/Projects/c/not_rimworld/src/game/game.c",
-  "file": "/home/abux/Projects/c/not_rimworld/src/game/game.c",
+  "directory": "/home/abux/Projects/c/rimworld/build",
+  "command": "/sbin/cc  -I/home/abux/Projects/c/rimworld/include  -fsanitize=address -g -fsanitize=address,undefined -g -g -O0 -std=gnu11 -o CMakeFiles/rimworld.dir/src/game/game.c.o -c /home/abux/Projects/c/rimworld/src/game/game.c",
+  "file": "/home/abux/Projects/c/rimworld/src/game/game.c",
   "output": "CMakeFiles/rimworld.dir/src/game/game.c.o"
 },
 {
-  "directory": "/home/abux/Projects/c/not_rimworld/build",
-  "command": "/usr/bin/cc  -I/home/abux/Projects/c/not_rimworld/include -g -std=gnu11 -o CMakeFiles/rimworld.dir/src/game/pawn_manager.c.o -c /home/abux/Projects/c/not_rimworld/src/game/pawn_manager.c",
-  "file": "/home/abux/Projects/c/not_rimworld/src/game/pawn_manager.c",
+  "directory": "/home/abux/Projects/c/rimworld/build",
+  "command": "/sbin/cc  -I/home/abux/Projects/c/rimworld/include  -fsanitize=address -g -fsanitize=address,undefined -g -g -O0 -std=gnu11 -o CMakeFiles/rimworld.dir/src/game/item_manager/inventory.c.o -c /home/abux/Projects/c/rimworld/src/game/item_manager/inventory.c",
+  "file": "/home/abux/Projects/c/rimworld/src/game/item_manager/inventory.c",
+  "output": "CMakeFiles/rimworld.dir/src/game/item_manager/inventory.c.o"
+},
+{
+  "directory": "/home/abux/Projects/c/rimworld/build",
+  "command": "/sbin/cc  -I/home/abux/Projects/c/rimworld/include  -fsanitize=address -g -fsanitize=address,undefined -g -g -O0 -std=gnu11 -o CMakeFiles/rimworld.dir/src/game/item_manager/item.c.o -c /home/abux/Projects/c/rimworld/src/game/item_manager/item.c",
+  "file": "/home/abux/Projects/c/rimworld/src/game/item_manager/item.c",
+  "output": "CMakeFiles/rimworld.dir/src/game/item_manager/item.c.o"
+},
+{
+  "directory": "/home/abux/Projects/c/rimworld/build",
+  "command": "/sbin/cc  -I/home/abux/Projects/c/rimworld/include  -fsanitize=address -g -fsanitize=address,undefined -g -g -O0 -std=gnu11 -o CMakeFiles/rimworld.dir/src/game/mouse.c.o -c /home/abux/Projects/c/rimworld/src/game/mouse.c",
+  "file": "/home/abux/Projects/c/rimworld/src/game/mouse.c",
+  "output": "CMakeFiles/rimworld.dir/src/game/mouse.c.o"
+},
+{
+  "directory": "/home/abux/Projects/c/rimworld/build",
+  "command": "/sbin/cc  -I/home/abux/Projects/c/rimworld/include  -fsanitize=address -g -fsanitize=address,undefined -g -g -O0 -std=gnu11 -o CMakeFiles/rimworld.dir/src/game/pawn_manager.c.o -c /home/abux/Projects/c/rimworld/src/game/pawn_manager.c",
+  "file": "/home/abux/Projects/c/rimworld/src/game/pawn_manager.c",
   "output": "CMakeFiles/rimworld.dir/src/game/pawn_manager.c.o"
 },
 {
-  "directory": "/home/abux/Projects/c/not_rimworld/build",
-  "command": "/usr/bin/cc  -I/home/abux/Projects/c/not_rimworld/include -g -std=gnu11 -o CMakeFiles/rimworld.dir/src/game/texture_manager.c.o -c /home/abux/Projects/c/not_rimworld/src/game/texture_manager.c",
-  "file": "/home/abux/Projects/c/not_rimworld/src/game/texture_manager.c",
+  "directory": "/home/abux/Projects/c/rimworld/build",
+  "command": "/sbin/cc  -I/home/abux/Projects/c/rimworld/include  -fsanitize=address -g -fsanitize=address,undefined -g -g -O0 -std=gnu11 -o CMakeFiles/rimworld.dir/src/game/texture_manager.c.o -c /home/abux/Projects/c/rimworld/src/game/texture_manager.c",
+  "file": "/home/abux/Projects/c/rimworld/src/game/texture_manager.c",
   "output": "CMakeFiles/rimworld.dir/src/game/texture_manager.c.o"
 },
 {
-  "directory": "/home/abux/Projects/c/not_rimworld/build",
-  "command": "/usr/bin/cc  -I/home/abux/Projects/c/not_rimworld/include -g -std=gnu11 -o CMakeFiles/rimworld.dir/src/game/ui.c.o -c /home/abux/Projects/c/not_rimworld/src/game/ui.c",
-  "file": "/home/abux/Projects/c/not_rimworld/src/game/ui.c",
+  "directory": "/home/abux/Projects/c/rimworld/build",
+  "command": "/sbin/cc  -I/home/abux/Projects/c/rimworld/include  -fsanitize=address -g -fsanitize=address,undefined -g -g -O0 -std=gnu11 -o CMakeFiles/rimworld.dir/src/game/ui.c.o -c /home/abux/Projects/c/rimworld/src/game/ui.c",
+  "file": "/home/abux/Projects/c/rimworld/src/game/ui.c",
   "output": "CMakeFiles/rimworld.dir/src/game/ui.c.o"
 },
 {
-  "directory": "/home/abux/Projects/c/not_rimworld/build",
-  "command": "/usr/bin/cc  -I/home/abux/Projects/c/not_rimworld/include -g -std=gnu11 -o CMakeFiles/rimworld.dir/src/game/world.c.o -c /home/abux/Projects/c/not_rimworld/src/game/world.c",
-  "file": "/home/abux/Projects/c/not_rimworld/src/game/world.c",
+  "directory": "/home/abux/Projects/c/rimworld/build",
+  "command": "/sbin/cc  -I/home/abux/Projects/c/rimworld/include  -fsanitize=address -g -fsanitize=address,undefined -g -g -O0 -std=gnu11 -o CMakeFiles/rimworld.dir/src/game/world.c.o -c /home/abux/Projects/c/rimworld/src/game/world.c",
+  "file": "/home/abux/Projects/c/rimworld/src/game/world.c",
   "output": "CMakeFiles/rimworld.dir/src/game/world.c.o"
 }
 ]

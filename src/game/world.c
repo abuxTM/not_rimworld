@@ -9,15 +9,15 @@
 Block* block_create(World* world, Vector2D pos, Vector2D scale) {
   if (world->count >= world->capacity) {
     world->capacity *= 2;
-    world->blocks = (Block**)realloc(world->blocks, world->capacity * sizeof(Block*));
+    world->blocks = realloc(world->blocks, world->capacity * sizeof(Block*));
   }
 
-  Block* block = (Block*)malloc(sizeof(Block));
+  Block* block = malloc(sizeof(Block));
   if (!block) return NULL;
 
   block->pos = pos;
   block->scale = scale;
-  block->texture = get_texture("assets/grass.png");
+  block->texture = get_texture("assets/world/stone_tile.png");
 
   world->blocks[world->count++] = block;
 
@@ -32,20 +32,20 @@ void block_render(Block* block) {
   SDL_SetRenderDrawColor(global.renderer, 200, 20, 20, 255);
 
   SDL_Rect camera_rect = {
-    block->pos.x - global.camera->pos.x,
-    block->pos.y - global.camera->pos.y,
-    block->scale.x,
-    block->scale.y
+    block->pos.x * global.camera->zoom - global.camera->pos.x,
+    block->pos.y * global.camera->zoom - global.camera->pos.y,
+    block->scale.x * global.camera->zoom,
+    block->scale.y * global.camera->zoom
   };
 
-  if (global.show_coll) SDL_RenderDrawRect(global.renderer, &camera_rect);
   if (block->texture) SDL_RenderCopy(global.renderer, block->texture, NULL, &camera_rect);
+  if (global.show_coll) SDL_RenderDrawRect(global.renderer, &camera_rect);
 }
 
 World* world_create(size_t initial_capacity) {
-  World* world = (World*)malloc(sizeof(World));
+  World* world = malloc(sizeof(World));
 
-  world->blocks = (Block**)malloc(initial_capacity * sizeof(Block*));
+  world->blocks = malloc(initial_capacity * sizeof(Block*));
   world->capacity = initial_capacity;
   world->count = 0;
 

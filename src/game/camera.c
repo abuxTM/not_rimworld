@@ -3,23 +3,28 @@
 #include <SDL2/SDL_keycode.h>
 
 Camera* camera_create() {
-  Camera* camera = (Camera*)malloc(sizeof(Camera));
+  Camera* camera = malloc(sizeof(Camera));
 
   camera->pos.x = 0;
   camera->pos.y = 0;
   camera->speed = 4;
+  camera->zoom = 1;
+  camera->follow_target = false;
 
   return camera;
 }
 
 void camera_update(Camera* camera) {
   // Calculate the target position for the camera to center the character
-  float target_x = camera->dir.x - (global.screen_width / 2.0f) + (camera->scale.x / 2.0f);
-  float target_y = camera->dir.y - (global.screen_height / 2.0f) + (camera->scale.y / 2.0f);
+  float target_x = camera->dir.x * camera->zoom - (global.screen_width / 2.f) + (camera->scale.x / 2) * camera->zoom;
+  float target_y = camera->dir.y * camera->zoom - (global.screen_height / 2.f) + (camera->scale.y / 2) * camera->zoom;
   
   // Update camera position smoothly towards the target position
-  camera->pos.x += (target_x - camera->pos.x) / (camera->follow_target ? 15.0f : 1.0f);
-  camera->pos.y += (target_y - camera->pos.y) / (camera->follow_target ? 15.0f : 1.0f);
+  camera->pos.x += (target_x - camera->pos.x) / (camera->follow_target ? 14 : 1);
+  camera->pos.y += (target_y - camera->pos.y) / (camera->follow_target ? 14 : 1);
+
+  if (camera->zoom > 2) camera->zoom = 2;
+  if (camera->zoom < 0.4) camera->zoom = 0.4;
   
   // Manual camera movement when not following a target
   if (!camera->follow_target) {
