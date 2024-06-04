@@ -6,7 +6,7 @@
 void window_init(void) {
   global.window = SDL_CreateWindow("Rimworld",
                                    SDL_WINDOWPOS_UNDEFINED, SDL_WINDOWPOS_UNDEFINED,
-                                   global.screen_width, global.screen_height, SDL_WINDOW_SHOWN);
+                                   global.screen_width, global.screen_height, SDL_WINDOW_SHOWN | SDL_WINDOW_FULLSCREEN_DESKTOP);
   if (global.window == NULL) {
     printf("[SDL2] There was an error while creating window. SDL_Error: %s\n", SDL_GetError());
     SDL_Quit();

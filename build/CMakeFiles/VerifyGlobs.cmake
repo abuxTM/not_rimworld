@@ -13,10 +13,12 @@ set(OLD_GLOB
   "/home/abux/Projects/c/rimworld/src/game/item_manager/inventory.c"
   "/home/abux/Projects/c/rimworld/src/game/item_manager/item.c"
   "/home/abux/Projects/c/rimworld/src/game/mouse.c"
+  "/home/abux/Projects/c/rimworld/src/game/particle_manager.c"
   "/home/abux/Projects/c/rimworld/src/game/pawn_manager.c"
   "/home/abux/Projects/c/rimworld/src/game/texture_manager.c"
   "/home/abux/Projects/c/rimworld/src/game/ui.c"
   "/home/abux/Projects/c/rimworld/src/game/world.c"
+  "/home/abux/Projects/c/rimworld/src/utils/remath.c"
   )
 if(NOT "${NEW_GLOB}" STREQUAL "${OLD_GLOB}")
   message("-- GLOB mismatch!")

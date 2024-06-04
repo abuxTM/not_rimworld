@@ -16,14 +16,14 @@ Mouse* mouse_init() {
 
   texture = get_texture("assets/world/ground.png");
   mouse->rect = (SDL_Rect){0, 0, TILE_SIZE, TILE_SIZE};
-  mouse->state = BUILDING;
+  mouse->state = NORMAL;
   SDL_SetTextureBlendMode(texture, SDL_BLENDMODE_BLEND);
   SDL_SetTextureAlphaMod(texture, 200);
 
   return mouse;
 }
 
-void mouse_render(World* world) {
+void mouse_render() {
   if (global.mouse->state == BUILDING) {
     global.mouse->rect = (SDL_Rect) {
       nrect.x * global.camera->zoom - global.camera->pos.x,
@@ -32,30 +32,21 @@ void mouse_render(World* world) {
       nrect.h * global.camera->zoom
     };
     SDL_RenderCopy(global.renderer, texture, NULL, &global.mouse->rect);
-
-    block_create(
-      world,
-      (Vector2D){global.mouse->rect.x, global.mouse->rect.y},
-      (Vector2D){64, 64}
-    );
   }
 }
 
-void mouse_inputs(SDL_Event* event) {
+void mouse_inputs(SDL_Event* event, World* world) {
   if (event->type == SDL_MOUSEBUTTONDOWN) {
-    int mouseX, mouseY;
-    SDL_GetMouseState(&mouseX, &mouseY);
+    SDL_GetMouseState(&global.mouse->pos.x, &global.mouse->pos.y);
 
-    mouseX += global.camera->pos.x;
-    mouseY += global.camera->pos.y;
-    
-    // Calculate position considering zoom level
-    int zoomedMouseX = mouseX / global.camera->zoom;
-    int zoomedMouseY = mouseY / global.camera->zoom;
+    if (global.mouse->state != BUILDING) return;
+    // FIX: Mouse position
+    //mouseX += global.camera->pos.x / global.camera->zoom;
+    //mouseY += global.camera->pos.y / global.camera->zoom;
     
     // Calculate new position of the rectangle
-    nrect.x = (zoomedMouseX / TILE_SIZE) * TILE_SIZE;
-    nrect.y = (zoomedMouseY / TILE_SIZE) * TILE_SIZE;
+    //nrect.x = (mouseX / TILE_SIZE) * TILE_SIZE;
+    //nrect.y = (mouseY / TILE_SIZE) * TILE_SIZE;
   }
 }
 

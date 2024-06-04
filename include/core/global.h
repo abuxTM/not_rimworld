@@ -2,6 +2,7 @@
 #define GLOBAL_H
 
 #include "game/mouse.h"
+#include "game/particle_manager.h"
 #include "game/pawn_manager.h"
 #define TILE_SIZE 64
 #define MAX_KEYS 256
@@ -22,6 +23,7 @@ typedef struct {
   Mouse* mouse;
   Camera* camera;
   PawnManager* pawn_manager;
+  ParticleManager* particle_manager;
 
   bool key_state[MAX_KEYS];
   bool should_quit;

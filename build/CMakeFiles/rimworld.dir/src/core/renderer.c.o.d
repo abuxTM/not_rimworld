@@ -66,6 +66,7 @@ CMakeFiles/rimworld.dir/src/core/renderer.c.o: \
  /usr/include/SDL2/SDL_quit.h /usr/include/SDL2/SDL_gesture.h \
  /usr/include/SDL2/SDL_touch.h \
  /usr/lib/gcc/x86_64-pc-linux-gnu/14.1.1/include/stdbool.h \
+ /home/abux/Projects/c/rimworld/include/game/particle_manager.h \
  /home/abux/Projects/c/rimworld/include/game/pawn_manager.h \
  /home/abux/Projects/c/rimworld/include/game/item_manager/inventory.h \
  /home/abux/Projects/c/rimworld/include/game/item_manager/item.h \

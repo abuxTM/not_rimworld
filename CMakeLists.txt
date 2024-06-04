@@ -1,4 +1,4 @@
-cmake_minimum_required(VERSION 3.0)
+cmake_minimum_required(VERSION 3.5)
 
 # Project Name
 project(rimworld)
@@ -30,6 +30,9 @@ file(GLOB_RECURSE SOURCES CONFIGURE_DEPENDS ${CMAKE_SOURCE_DIR}/src/*.c)
 
 # Add executable
 add_executable(${PROJECT_NAME} ${SOURCES})
+
+# Add compiler options
+target_compile_options(${PROJECT_NAME} PRIVATE -Wno-unknown-warning-option)
 
 # Add libraries
 target_link_libraries(${PROJECT_NAME} PRIVATE SDL2 SDL2_image SDL2_ttf m)

@@ -45,6 +45,12 @@ typedef struct {
 } Tab;
 
 typedef struct {
+  Tab** tabs;
+  size_t count;
+  size_t capacity;
+} Tab_Manager;
+
+typedef struct {
   Vector2D pos, scale;
   Button* pawn_health;
   Button* pawn_speed;
@@ -71,12 +77,18 @@ void panel_render(Panel* panel);
 // ▀█▀ ▄▀▄ ██▄ ▀ ▄▀▀
 //  █  █▀█ █▄█   ▄██
 
-Tab* tab_create(Vector2D pos, Vector2D scale, size_t initial_capacity);
+Tab* tab_create(Tab_Manager* manager, Vector2D pos, Vector2D scale, size_t initial_capacity);
 void tab_destroy(Tab* tab);
 void tab_render(Tab* tab);
+void tab_handle_events(Tab* tab, SDL_Event* event);
 void tab_add_button(Tab* tab, const char* text, Vector2D pos, Vector2D scale, void (*on_click)(void), bool is_active);
 void tab_add_button_lined(Tab* tab, const char* text, void (*on_click)(void), bool is_active);
 void tab_add_panel(Tab* tab, SDL_Texture* texture, bool is_active);
+
+Tab_Manager* tab_manager_create(size_t initial_capacity);
+void tab_manager_destroy(Tab_Manager* manager);
+void tab_manager_render(Tab_Manager* manager);
+void tab_manager_handle_events(Tab_Manager* manager, SDL_Event* event);
 
 PawnUI* pawn_ui_create(Vector2D pos, Vector2D scale);
 void pawn_ui_destroy(PawnUI* ui);

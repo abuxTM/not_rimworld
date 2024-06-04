@@ -2,12 +2,20 @@
 #define PAWN_MANAGER_H
 
 #include "game/item_manager/inventory.h"
+#include "game/particle_manager.h"
 #include "utils/remath.h"
 #include <SDL2/SDL_events.h>
 #include <SDL2/SDL_rect.h>
 #include <SDL2/SDL_render.h>
 #include <stdbool.h>
 #include <sys/types.h>
+
+typedef enum {
+  IDLE,
+  WALKING,
+  CONTROLLED,
+  DEAD
+} Status;
 
 typedef struct Pawn Pawn;
 
@@ -16,11 +24,13 @@ struct Pawn {
   int id, health, speed;
   Vector2D pos, dir, scale;
   Inventory* inventory;
+  ParticleSystem* particle_system;
   SDL_Texture* texture;
   SDL_Texture* text_texture;
   bool is_dead;
   bool is_controled;
   SDL_RendererFlip flip;
+  Status status;
 };
 
 typedef struct {

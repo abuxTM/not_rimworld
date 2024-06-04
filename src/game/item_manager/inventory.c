@@ -1,6 +1,5 @@
 #include "game/item_manager/inventory.h"
-#include "core/global.h"
-#include "utils/remath.h"
+#include "game/item_manager/item.h"
 #include <SDL2/SDL_rect.h>
 #include <SDL2/SDL_render.h>
 #include <sys/types.h>
@@ -9,7 +8,7 @@ Inventory* inventory_create(size_t initial_capacity) {
   Inventory* inventory = malloc(sizeof(Inventory));
   if (!inventory) return NULL;
 
-  inventory->items = (Item**)malloc(initial_capacity * sizeof(Item*));
+  inventory->items = malloc(initial_capacity * sizeof(Item*));
   inventory->count = 0;
   inventory->capacity = initial_capacity;
 
@@ -20,12 +19,8 @@ void inventory_destroy(Inventory* inventory) {
   if (inventory == NULL) return;
 
   for (size_t i = 0; i < inventory->count; ++i) {
-    if (inventory->items[i] != NULL) {
-      if (inventory->items[i]->texture != NULL) {
-        SDL_DestroyTexture(inventory->items[i]->texture);
-      }
-      free(inventory->items[i]);
-    }
+    if (!inventory->items[i]) return;
+    item_destroy(inventory->items[i]);
   }
   free(inventory->items);
   free(inventory);
@@ -35,14 +30,24 @@ void inventory_update(Inventory* inventory) {}
 
 void inventory_render(Inventory* inventory) {
   for (size_t i = 0; i < inventory->count; ++i) {
-    SDL_Rect rect = {
-      inventory->items[i]->pos.x * global.camera->zoom - global.camera->pos.x,
-      inventory->items[i]->pos.y * global.camera->zoom - global.camera->pos.y,
-      inventory->items[i]->scale.x * global.camera->zoom,
-      inventory->items[i]->scale.y * global.camera->zoom
-    };
-    if (inventory->items[i]->is_active) SDL_RenderCopyEx(global.renderer, inventory->items[i]->texture, NULL, &rect, 0, NULL, inventory->items[i]->flip);
+    item_render(inventory->items[i]);
+    if (inventory->items[i]->type == GUN) {
+    }
   }
+}
+
+void shoot(Item* item) {
+    Gun* gun = (Gun*)item;
+    if (gun->current_ammo <= gun->max_ammo) {
+        Bullet* new_bullet = bullet_create(); // Define bullet_create() function to allocate and initialize a new bullet
+        if (new_bullet != NULL) {
+            gun->bullets[gun->current_ammo++] = new_bullet;
+        } else {
+            // Handle error if bullet creation fails (e.g., out of memory)
+        }
+    } else {
+        // Handle error if gun is out of ammo
+    }
 }
 
 void inventory_use_item(Inventory* inventory, int id) {
@@ -50,14 +55,10 @@ void inventory_use_item(Inventory* inventory, int id) {
     Item* item = inventory->items[id];
     if (!item->is_active) return;
     switch (item->type) {
-      case TOOL:
-        use_tool((Tool*)item);
-        break;
       case GUN:
-        use_gun((Gun*)item);
+        shoot(item);
         break;
       default:
-        printf("Item is of generic type or unknown type.\n");
         break;
     }
   } else {

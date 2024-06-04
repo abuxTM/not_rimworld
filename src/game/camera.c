@@ -15,16 +15,16 @@ Camera* camera_create() {
 }
 
 void camera_update(Camera* camera) {
+  if (camera->zoom <= 0.4) camera->zoom = 0.4;
+  if (camera->zoom >= 2.0) camera->zoom = 2.0;
+
   // Calculate the target position for the camera to center the character
-  float target_x = camera->dir.x * camera->zoom - (global.screen_width / 2.f) + (camera->scale.x / 2) * camera->zoom;
-  float target_y = camera->dir.y * camera->zoom - (global.screen_height / 2.f) + (camera->scale.y / 2) * camera->zoom;
+  int target_x = camera->dir.x * camera->zoom - (global.screen_width / 2.f) + (int)(camera->scale.x / 2) * camera->zoom;
+  int target_y = camera->dir.y * camera->zoom - (global.screen_height / 2.f) + (int)(camera->scale.y / 2) * camera->zoom;
   
   // Update camera position smoothly towards the target position
   camera->pos.x += (target_x - camera->pos.x) / (camera->follow_target ? 14 : 1);
   camera->pos.y += (target_y - camera->pos.y) / (camera->follow_target ? 14 : 1);
-
-  if (camera->zoom > 2) camera->zoom = 2;
-  if (camera->zoom < 0.4) camera->zoom = 0.4;
   
   // Manual camera movement when not following a target
   if (!camera->follow_target) {
@@ -35,5 +35,7 @@ void camera_update(Camera* camera) {
     if (global.key_state[SDLK_d % MAX_KEYS]) camera->dir.x += camera->speed;
     if (global.key_state[SDLK_LSHIFT % MAX_KEYS]) camera->speed /= 2;
   }
+  if (global.key_state[SDLK_r % MAX_KEYS]) global.camera->zoom += 0.02;
+  if (global.key_state[SDLK_f % MAX_KEYS]) global.camera->zoom -= 0.02;
 }
 

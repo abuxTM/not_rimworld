@@ -16,10 +16,12 @@ set(CMAKE_DEPENDS_DEPENDENCY_FILES
   "/home/abux/Projects/c/rimworld/src/game/item_manager/inventory.c" "CMakeFiles/rimworld.dir/src/game/item_manager/inventory.c.o" "gcc" "CMakeFiles/rimworld.dir/src/game/item_manager/inventory.c.o.d"
   "/home/abux/Projects/c/rimworld/src/game/item_manager/item.c" "CMakeFiles/rimworld.dir/src/game/item_manager/item.c.o" "gcc" "CMakeFiles/rimworld.dir/src/game/item_manager/item.c.o.d"
   "/home/abux/Projects/c/rimworld/src/game/mouse.c" "CMakeFiles/rimworld.dir/src/game/mouse.c.o" "gcc" "CMakeFiles/rimworld.dir/src/game/mouse.c.o.d"
+  "/home/abux/Projects/c/rimworld/src/game/particle_manager.c" "CMakeFiles/rimworld.dir/src/game/particle_manager.c.o" "gcc" "CMakeFiles/rimworld.dir/src/game/particle_manager.c.o.d"
   "/home/abux/Projects/c/rimworld/src/game/pawn_manager.c" "CMakeFiles/rimworld.dir/src/game/pawn_manager.c.o" "gcc" "CMakeFiles/rimworld.dir/src/game/pawn_manager.c.o.d"
   "/home/abux/Projects/c/rimworld/src/game/texture_manager.c" "CMakeFiles/rimworld.dir/src/game/texture_manager.c.o" "gcc" "CMakeFiles/rimworld.dir/src/game/texture_manager.c.o.d"
   "/home/abux/Projects/c/rimworld/src/game/ui.c" "CMakeFiles/rimworld.dir/src/game/ui.c.o" "gcc" "CMakeFiles/rimworld.dir/src/game/ui.c.o.d"
   "/home/abux/Projects/c/rimworld/src/game/world.c" "CMakeFiles/rimworld.dir/src/game/world.c.o" "gcc" "CMakeFiles/rimworld.dir/src/game/world.c.o.d"
+  "/home/abux/Projects/c/rimworld/src/utils/remath.c" "CMakeFiles/rimworld.dir/src/utils/remath.c.o" "gcc" "CMakeFiles/rimworld.dir/src/utils/remath.c.o.d"
   )
 
 # Targets to which this target links which contain Fortran sources.

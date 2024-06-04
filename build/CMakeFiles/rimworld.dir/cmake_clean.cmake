@@ -15,6 +15,8 @@ file(REMOVE_RECURSE
   "CMakeFiles/rimworld.dir/src/game/item_manager/item.c.o.d"
   "CMakeFiles/rimworld.dir/src/game/mouse.c.o"
   "CMakeFiles/rimworld.dir/src/game/mouse.c.o.d"
+  "CMakeFiles/rimworld.dir/src/game/particle_manager.c.o"
+  "CMakeFiles/rimworld.dir/src/game/particle_manager.c.o.d"
   "CMakeFiles/rimworld.dir/src/game/pawn_manager.c.o"
   "CMakeFiles/rimworld.dir/src/game/pawn_manager.c.o.d"
   "CMakeFiles/rimworld.dir/src/game/texture_manager.c.o"
@@ -23,6 +25,8 @@ file(REMOVE_RECURSE
   "CMakeFiles/rimworld.dir/src/game/ui.c.o.d"
   "CMakeFiles/rimworld.dir/src/game/world.c.o"
   "CMakeFiles/rimworld.dir/src/game/world.c.o.d"
+  "CMakeFiles/rimworld.dir/src/utils/remath.c.o"
+  "CMakeFiles/rimworld.dir/src/utils/remath.c.o.d"
   "rimworld"
   "rimworld.pdb"
 )

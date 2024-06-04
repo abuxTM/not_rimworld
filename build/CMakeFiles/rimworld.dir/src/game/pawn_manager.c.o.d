@@ -58,6 +58,7 @@ CMakeFiles/rimworld.dir/src/game/pawn_manager.c.o: \
  /usr/include/SDL2/SDL_rwops.h /usr/include/SDL2/SDL_video.h \
  /usr/include/SDL2/SDL_surface.h /usr/include/SDL2/SDL_blendmode.h \
  /usr/lib/gcc/x86_64-pc-linux-gnu/14.1.1/include/stdbool.h \
+ /home/abux/Projects/c/rimworld/include/game/particle_manager.h \
  /usr/include/SDL2/SDL_events.h /usr/include/SDL2/SDL_keyboard.h \
  /usr/include/SDL2/SDL_keycode.h /usr/include/SDL2/SDL_scancode.h \
  /usr/include/SDL2/SDL_mouse.h /usr/include/SDL2/SDL_joystick.h \

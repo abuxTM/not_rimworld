@@ -12,14 +12,14 @@ typedef enum {
 } State;
 
 typedef struct {
-  Vector2D pos;
+  VectorI2D pos;
   SDL_Rect rect;
   State state;
 } Mouse;
 
 Mouse* mouse_init();
 
-void mouse_render(World* world);
-void mouse_inputs(SDL_Event* event);
+void mouse_render();
+void mouse_inputs(SDL_Event* event, World* world);
 
 #endif

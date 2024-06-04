@@ -66,6 +66,7 @@ CMakeFiles/rimworld.dir/src/game/camera.c.o: \
  /usr/include/SDL2/SDL_mutex.h /usr/include/SDL2/SDL_gamecontroller.h \
  /usr/include/SDL2/SDL_sensor.h /usr/include/SDL2/SDL_quit.h \
  /usr/include/SDL2/SDL_gesture.h /usr/include/SDL2/SDL_touch.h \
+ /home/abux/Projects/c/rimworld/include/game/particle_manager.h \
  /home/abux/Projects/c/rimworld/include/game/pawn_manager.h \
  /home/abux/Projects/c/rimworld/include/game/item_manager/inventory.h \
  /home/abux/Projects/c/rimworld/include/game/item_manager/item.h \

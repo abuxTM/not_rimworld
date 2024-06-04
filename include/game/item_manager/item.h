@@ -6,20 +6,20 @@
 #include <stdbool.h>
 
 typedef enum {
-  CONSUMABLE,
+  TOOL,
   GUN,
-  MEELE,
-  TOOL
+  MELEE,
+  CONSUMABLE
 } ItemType;
 
 typedef struct {
-  Vector2D pos, scale;
   const char* name;
   const char* description;
-  ItemType type;
+  Vector2D pos, scale;
   SDL_Texture* texture;
-  bool is_active;
   SDL_RendererFlip flip;
+  ItemType type;
+  bool is_active;
 } Item;
 
 typedef struct {
@@ -29,10 +29,23 @@ typedef struct {
 } Tool;
 
 typedef struct {
+  Vector2D pos, scale;
+} Bullet;
+
+typedef struct {
   Item* item;
+  Bullet** bullets;
   int current_ammo, max_ammo;
 } Gun;
 
 Item* item_create(Vector2D pos, Vector2D scale, const char* name, const char* description, ItemType type, SDL_Texture* texture);
+void item_destroy(Item* item);
+void item_render(Item* item);
+
+Bullet* bullet_create();
+void bullet_render(Bullet* bullet);
+void bullet_destroy(Bullet* bullet);
+void bullets_render(Gun* gun);
+void bullets_destroy(Gun* gun);
 
 #endif

@@ -335,6 +335,30 @@ src/game/mouse.c.s:
 	$(MAKE) $(MAKESILENT) -f CMakeFiles/rimworld.dir/build.make CMakeFiles/rimworld.dir/src/game/mouse.c.s
 .PHONY : src/game/mouse.c.s
 
+src/game/particle_manager.o: src/game/particle_manager.c.o
+.PHONY : src/game/particle_manager.o
+
+# target to build an object file
+src/game/particle_manager.c.o:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/rimworld.dir/build.make CMakeFiles/rimworld.dir/src/game/particle_manager.c.o
+.PHONY : src/game/particle_manager.c.o
+
+src/game/particle_manager.i: src/game/particle_manager.c.i
+.PHONY : src/game/particle_manager.i
+
+# target to preprocess a source file
+src/game/particle_manager.c.i:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/rimworld.dir/build.make CMakeFiles/rimworld.dir/src/game/particle_manager.c.i
+.PHONY : src/game/particle_manager.c.i
+
+src/game/particle_manager.s: src/game/particle_manager.c.s
+.PHONY : src/game/particle_manager.s
+
+# target to generate assembly for a file
+src/game/particle_manager.c.s:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/rimworld.dir/build.make CMakeFiles/rimworld.dir/src/game/particle_manager.c.s
+.PHONY : src/game/particle_manager.c.s
+
 src/game/pawn_manager.o: src/game/pawn_manager.c.o
 .PHONY : src/game/pawn_manager.o
 
@@ -431,6 +455,30 @@ src/game/world.c.s:
 	$(MAKE) $(MAKESILENT) -f CMakeFiles/rimworld.dir/build.make CMakeFiles/rimworld.dir/src/game/world.c.s
 .PHONY : src/game/world.c.s
 
+src/utils/remath.o: src/utils/remath.c.o
+.PHONY : src/utils/remath.o
+
+# target to build an object file
+src/utils/remath.c.o:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/rimworld.dir/build.make CMakeFiles/rimworld.dir/src/utils/remath.c.o
+.PHONY : src/utils/remath.c.o
+
+src/utils/remath.i: src/utils/remath.c.i
+.PHONY : src/utils/remath.i
+
+# target to preprocess a source file
+src/utils/remath.c.i:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/rimworld.dir/build.make CMakeFiles/rimworld.dir/src/utils/remath.c.i
+.PHONY : src/utils/remath.c.i
+
+src/utils/remath.s: src/utils/remath.c.s
+.PHONY : src/utils/remath.s
+
+# target to generate assembly for a file
+src/utils/remath.c.s:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/rimworld.dir/build.make CMakeFiles/rimworld.dir/src/utils/remath.c.s
+.PHONY : src/utils/remath.c.s
+
 # Help Target
 help:
 	@echo "The following are some of the valid targets for this Makefile:"
@@ -465,6 +513,9 @@ help:
 	@echo "... src/game/mouse.o"
 	@echo "... src/game/mouse.i"
 	@echo "... src/game/mouse.s"
+	@echo "... src/game/particle_manager.o"
+	@echo "... src/game/particle_manager.i"
+	@echo "... src/game/particle_manager.s"
 	@echo "... src/game/pawn_manager.o"
 	@echo "... src/game/pawn_manager.i"
 	@echo "... src/game/pawn_manager.s"
@@ -477,6 +528,9 @@ help:
 	@echo "... src/game/world.o"
 	@echo "... src/game/world.i"
 	@echo "... src/game/world.s"
+	@echo "... src/utils/remath.o"
+	@echo "... src/utils/remath.i"
+	@echo "... src/utils/remath.s"
 .PHONY : help
 
 
